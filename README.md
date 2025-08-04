@@ -133,9 +133,34 @@ Check out the `Examples/` directory for complete sample applications.
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
+## 📊 Project Statistics
+
+<div align="center">
+
+[![GitHub stars](https://img.shields.io/github/stars/muhittincamdali/VisionOS-UI-Framework?style=social)](https://github.com/muhittincamdali/VisionOS-UI-Framework/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/muhittincamdali/VisionOS-UI-Framework?style=social)](https://github.com/muhittincamdali/VisionOS-UI-Framework/network)
+[![GitHub issues](https://img.shields.io/github/issues/muhittincamdali/VisionOS-UI-Framework)](https://github.com/muhittincamdali/VisionOS-UI-Framework/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/muhittincamdali/VisionOS-UI-Framework)](https://github.com/muhittincamdali/VisionOS-UI-Framework/pulls)
+
+</div>
+
+## 🌟 Stargazers
+
+[![Stargazers repo roster for @muhittincamdali/VisionOS-UI-Framework](https://reporoster.com/stars/muhittincamdali/VisionOS-UI-Framework)](https://github.com/muhittincamdali/VisionOS-UI-Framework/stargazers)
+
+## 🙏 Acknowledgments
+
+- Apple for the excellent VisionOS platform
+- The Swift community for inspiration and feedback
+- All contributors who help improve this framework
+- Spatial computing best practices
+- AR/VR development standards
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+**⭐ Star this repository if it helped you!**
 
 ## 📞 Support
 
