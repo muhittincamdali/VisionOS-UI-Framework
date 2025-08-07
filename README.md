@@ -119,7 +119,6 @@ spatialWindowManager.configure(windowConfig)
 
 // Create floating window
 let floatingWindow = SpatialWindow(
-    title: "Spatial App",
     size: CGSize(width: 800, height: 600),
     position: SpatialPosition(x: 0, y: 1.5, z: -2)
 )
@@ -135,7 +134,6 @@ floatingWindow.configure { config in
 // Add content to window
 floatingWindow.addContent(
     SpatialContentView(
-        title: "Welcome to Spatial Computing",
         content: "This is a floating window in 3D space"
     )
 ) { result in
@@ -168,7 +166,6 @@ componentManager.configure(componentConfig)
 
 // Create 3D button
 let spatialButton = SpatialButton(
-    title: "Spatial Button",
     position: SpatialPosition(x: 0, y: 0, z: -1),
     size: CGSize(width: 200, height: 60)
 )
@@ -544,7 +541,6 @@ eyeTrackingManager.addGazeInteraction(
 
 ```bash
 # Clone the repository
-git clone https://github.com/muhittincamdali/VisionOS-UI-Framework.git
 
 # Navigate to project directory
 cd VisionOS-UI-Framework
@@ -562,7 +558,6 @@ Add the framework to your project:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/muhittincamdali/VisionOS-UI-Framework.git", from: "1.0.0")
 ]
 ```
 
@@ -604,13 +599,11 @@ let simpleSpatialWindow = SimpleSpatialWindow()
 
 // Create spatial window
 simpleSpatialWindow.createWindow(
-    title: "My Spatial App",
     size: CGSize(width: 600, height: 400)
 ) { result in
     switch result {
     case .success(let window):
         print("✅ Spatial window created")
-        print("Title: \(window.title)")
         print("Size: \(window.size)")
     case .failure(let error):
         print("❌ Spatial window creation failed: \(error)")
@@ -626,13 +619,11 @@ let simple3DComponent = Simple3DComponent()
 
 // Create 3D button
 simple3DComponent.createButton(
-    title: "3D Button",
     position: SpatialPosition(x: 0, y: 0, z: -1)
 ) { result in
     switch result {
     case .success(let button):
         print("✅ 3D button created")
-        print("Title: \(button.title)")
         print("Position: \(button.position)")
     case .failure(let error):
         print("❌ 3D button creation failed: \(error)")
@@ -767,16 +758,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/muhittincamdali/VisionOS-UI-Framework?style=flat-square&logo=github)](https://github.com/muhittincamdali/VisionOS-UI-Framework/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/muhittincamdali/VisionOS-UI-Framework?style=flat-square&logo=github)](https://github.com/muhittincamdali/VisionOS-UI-Framework/network)
-[![GitHub issues](https://img.shields.io/github/issues/muhittincamdali/VisionOS-UI-Framework?style=flat-square&logo=github)](https://github.com/muhittincamdali/VisionOS-UI-Framework/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/muhittincamdali/VisionOS-UI-Framework?style=flat-square&logo=github)](https://github.com/muhittincamdali/VisionOS-UI-Framework/pulls)
-[![GitHub contributors](https://img.shields.io/github/contributors/muhittincamdali/VisionOS-UI-Framework?style=flat-square&logo=github)](https://github.com/muhittincamdali/VisionOS-UI-Framework/graphs/contributors)
-[![GitHub last commit](https://img.shields.io/github/last-commit/muhittincamdali/VisionOS-UI-Framework?style=flat-square&logo=github)](https://github.com/muhittincamdali/VisionOS-UI-Framework/commits/master)
-[![GitHub license](https://img.shields.io/github/license/muhittincamdali/VisionOS-UI-Framework?style=flat-square&logo=github)](https://github.com/muhittincamdali/VisionOS-UI-Framework/blob/master/LICENSE)
 
 </div>
 
 ## 🌟 Stargazers
 
-[![Stargazers repo roster for @muhittincamdali/VisionOS-UI-Framework](https://reporoster.com/stars/muhittincamdali/VisionOS-UI-Framework)](https://github.com/muhittincamdali/VisionOS-UI-Framework/stargazers)
