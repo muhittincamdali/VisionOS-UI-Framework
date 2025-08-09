@@ -779,4 +779,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🌟 Stargazers
 
-[![Stargazers repo roster for @muhittincamdali/VisionOS-UI-Framework](https://reporoster.com/stars/muhittincamdali/VisionOS-UI-Framework)](https://github.com/muhittincamdali/VisionOS-UI-Framework/stargazers)
+[![Stargazers repo roster for @muhittincamdali/VisionOS-UI-Framework](https://starchart.cc/muhittincamdali/VisionOS-UI-Framework.svg)](https://github.com/muhittincamdali/VisionOS-UI-Framework/stargazers)
