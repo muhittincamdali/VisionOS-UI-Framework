@@ -1,5 +1,45 @@
 # Immersive Experiences Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [Immersive Experiences Guide](#immersive-experiences-guide)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+  - [Key Concepts](#key-concepts)
+- [Immersive Space Design](#immersive-space-design)
+  - [Creating Immersive Spaces](#creating-immersive-spaces)
+  - [Mixed Reality Spaces](#mixed-reality-spaces)
+- [Environmental Effects](#environmental-effects)
+  - [Lighting Effects](#lighting-effects)
+  - [Atmospheric Effects](#atmospheric-effects)
+- [Spatial Audio](#spatial-audio)
+  - [Environmental Audio](#environmental-audio)
+  - [Spatial Audio Sources](#spatial-audio-sources)
+- [Spatial Physics](#spatial-physics)
+  - [Physics Configuration](#physics-configuration)
+  - [Physics Objects](#physics-objects)
+- [Particle Systems](#particle-systems)
+  - [Particle System Configuration](#particle-system-configuration)
+  - [Particle Effects](#particle-effects)
+- [Weather Effects](#weather-effects)
+  - [Weather System](#weather-system)
+  - [Weather Effects](#weather-effects)
+- [Time of Day](#time-of-day)
+  - [Time System](#time-system)
+  - [Time Effects](#time-effects)
+- [Multi-User Collaboration](#multi-user-collaboration)
+  - [Collaboration Setup](#collaboration-setup)
+  - [Collaboration Session](#collaboration-session)
+- [Best Practices](#best-practices)
+  - [Immersive Design](#immersive-design)
+  - [Performance](#performance)
+  - [User Experience](#user-experience)
+- [Examples](#examples)
+  - [Complete Immersive Experience](#complete-immersive-experience)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Immersive Experiences Guide provides comprehensive instructions for creating compelling immersive spatial computing experiences in VisionOS applications.

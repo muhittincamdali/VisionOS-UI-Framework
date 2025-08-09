@@ -1,5 +1,40 @@
 # VisionOS UI Framework Manager API
 
+<!-- TOC START -->
+## Table of Contents
+- [VisionOS UI Framework Manager API](#visionos-ui-framework-manager-api)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Installation](#installation)
+  - [Swift Package Manager](#swift-package-manager)
+  - [Requirements](#requirements)
+- [Quick Start](#quick-start)
+  - [Basic Setup](#basic-setup)
+- [Core Components](#core-components)
+  - [VisionOSUIFrameworkManager](#visionosuiframeworkmanager)
+  - [VisionOSUIFrameworkConfiguration](#visionosuiframeworkconfiguration)
+- [Configuration](#configuration)
+  - [Basic Configuration](#basic-configuration)
+  - [Advanced Configuration](#advanced-configuration)
+- [Spatial UI Management](#spatial-ui-management)
+  - [Creating Spatial Windows](#creating-spatial-windows)
+  - [Managing 3D Components](#managing-3d-components)
+- [Immersive Experiences](#immersive-experiences)
+  - [Creating Immersive Spaces](#creating-immersive-spaces)
+- [3D Interactions](#3d-interactions)
+  - [Hand Tracking](#hand-tracking)
+  - [Eye Tracking](#eye-tracking)
+- [Performance Optimization](#performance-optimization)
+  - [Spatial Performance Configuration](#spatial-performance-configuration)
+  - [Performance Monitoring](#performance-monitoring)
+- [Error Handling](#error-handling)
+  - [Error Types](#error-types)
+  - [Error Handling Example](#error-handling-example)
+- [Examples](#examples)
+  - [Complete Example](#complete-example)
+<!-- TOC END -->
+
+
 ## Overview
 
 The VisionOS UI Framework Manager is the core entry point for the VisionOS UI Framework, providing comprehensive spatial computing capabilities, immersive experiences, and 3D interactions.

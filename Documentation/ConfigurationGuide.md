@@ -1,5 +1,26 @@
 # Configuration Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [Configuration Guide](#configuration-guide)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Basic Configuration](#basic-configuration)
+  - [Framework Configuration](#framework-configuration)
+  - [Component Configuration](#component-configuration)
+- [Spatial Configuration](#spatial-configuration)
+  - [Spatial UI Settings](#spatial-ui-settings)
+- [Audio Configuration](#audio-configuration)
+  - [Spatial Audio Settings](#spatial-audio-settings)
+- [Performance Configuration](#performance-configuration)
+  - [Performance Settings](#performance-settings)
+- [Accessibility Configuration](#accessibility-configuration)
+  - [Accessibility Settings](#accessibility-settings)
+- [Examples](#examples)
+  - [Complete Configuration Example](#complete-configuration-example)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Configuration Guide provides instructions for configuring VisionOS UI Framework components and settings.

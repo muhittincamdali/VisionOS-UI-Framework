@@ -1,5 +1,47 @@
 # 3D Interactions Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [3D Interactions Guide](#3d-interactions-guide)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+  - [Key Concepts](#key-concepts)
+- [Hand Tracking](#hand-tracking)
+  - [Basic Hand Tracking Setup](#basic-hand-tracking-setup)
+  - [Hand Tracking Best Practices](#hand-tracking-best-practices)
+- [Eye Tracking](#eye-tracking)
+  - [Basic Eye Tracking Setup](#basic-eye-tracking-setup)
+  - [Eye Tracking Best Practices](#eye-tracking-best-practices)
+- [Voice Commands](#voice-commands)
+  - [Basic Voice Command Setup](#basic-voice-command-setup)
+  - [Voice Command Best Practices](#voice-command-best-practices)
+- [Spatial Gestures](#spatial-gestures)
+  - [Basic Spatial Gesture Setup](#basic-spatial-gesture-setup)
+  - [Spatial Gesture Best Practices](#spatial-gesture-best-practices)
+- [Object Manipulation](#object-manipulation)
+  - [Basic Object Manipulation Setup](#basic-object-manipulation-setup)
+  - [Object Manipulation Best Practices](#object-manipulation-best-practices)
+- [Spatial Selection](#spatial-selection)
+  - [Basic Spatial Selection Setup](#basic-spatial-selection-setup)
+  - [Spatial Selection Best Practices](#spatial-selection-best-practices)
+- [Spatial Navigation](#spatial-navigation)
+  - [Basic Spatial Navigation Setup](#basic-spatial-navigation-setup)
+  - [Spatial Navigation Best Practices](#spatial-navigation-best-practices)
+- [Spatial Collaboration](#spatial-collaboration)
+  - [Basic Spatial Collaboration Setup](#basic-spatial-collaboration-setup)
+  - [Spatial Collaboration Best Practices](#spatial-collaboration-best-practices)
+- [Best Practices](#best-practices)
+  - [General 3D Interaction](#general-3d-interaction)
+  - [Spatial Computing Specific](#spatial-computing-specific)
+- [Performance Optimization](#performance-optimization)
+  - [Interaction Performance](#interaction-performance)
+  - [Optimization Techniques](#optimization-techniques)
+- [Examples](#examples)
+  - [Complete 3D Interaction Example](#complete-3d-interaction-example)
+<!-- TOC END -->
+
+
 ## Overview
 
 The 3D Interactions Guide provides comprehensive instructions for implementing rich 3D interactions in VisionOS applications. This guide covers hand tracking, eye tracking, voice commands, spatial gestures, and object manipulation.

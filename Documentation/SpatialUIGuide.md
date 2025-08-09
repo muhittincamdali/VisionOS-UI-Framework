@@ -1,5 +1,51 @@
 # Spatial UI Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [Spatial UI Guide](#spatial-ui-guide)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+  - [Key Concepts](#key-concepts)
+- [Spatial UI Concepts](#spatial-ui-concepts)
+  - [Spatial Coordinate System](#spatial-coordinate-system)
+  - [Spatial Positioning](#spatial-positioning)
+  - [Spatial Scale](#spatial-scale)
+- [Spatial Windows](#spatial-windows)
+  - [Creating Floating Windows](#creating-floating-windows)
+  - [Window Management](#window-management)
+- [3D Components](#3d-components)
+  - [Spatial Buttons](#spatial-buttons)
+  - [Spatial Cards](#spatial-cards)
+  - [Spatial Text](#spatial-text)
+- [Spatial Layouts](#spatial-layouts)
+  - [Grid Layout](#grid-layout)
+  - [Circular Layout](#circular-layout)
+  - [Stack Layout](#stack-layout)
+- [Depth Management](#depth-management)
+  - [Z-Index Management](#z-index-management)
+  - [Occlusion Handling](#occlusion-handling)
+- [Spatial Navigation](#spatial-navigation)
+  - [Navigation System](#navigation-system)
+  - [Wayfinding](#wayfinding)
+- [Spatial Typography](#spatial-typography)
+  - [3D Text Rendering](#3d-text-rendering)
+  - [Text Scaling](#text-scaling)
+- [Spatial Colors](#spatial-colors)
+  - [Color Management](#color-management)
+  - [Lighting Effects](#lighting-effects)
+- [Spatial Animations](#spatial-animations)
+  - [Animation System](#animation-system)
+  - [Transition Effects](#transition-effects)
+- [Best Practices](#best-practices)
+  - [Performance Optimization](#performance-optimization)
+  - [Accessibility](#accessibility)
+  - [User Experience](#user-experience)
+- [Examples](#examples)
+  - [Complete Spatial UI Example](#complete-spatial-ui-example)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Spatial UI Guide provides comprehensive instructions for creating and managing spatial user interfaces in VisionOS applications using the VisionOS UI Framework.

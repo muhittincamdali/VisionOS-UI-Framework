@@ -1,5 +1,42 @@
 # Spatial Computing Best Practices Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [Spatial Computing Best Practices Guide](#spatial-computing-best-practices-guide)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+  - [Key Principles](#key-principles)
+- [Spatial Design Principles](#spatial-design-principles)
+  - [Spatial Layout](#spatial-layout)
+  - [Spatial Navigation](#spatial-navigation)
+- [User Experience](#user-experience)
+  - [Interaction Design](#interaction-design)
+  - [Feedback and Response](#feedback-and-response)
+- [Performance Optimization](#performance-optimization)
+  - [Rendering Performance](#rendering-performance)
+  - [Spatial Performance](#spatial-performance)
+- [Accessibility](#accessibility)
+  - [Inclusive Design](#inclusive-design)
+  - [Accessibility Features](#accessibility-features)
+- [Safety and Comfort](#safety-and-comfort)
+  - [User Safety](#user-safety)
+  - [User Comfort](#user-comfort)
+- [Content Guidelines](#content-guidelines)
+  - [Visual Content](#visual-content)
+  - [Audio Content](#audio-content)
+- [Technical Best Practices](#technical-best-practices)
+  - [Code Quality](#code-quality)
+  - [Architecture](#architecture)
+  - [Performance](#performance)
+- [Testing and Validation](#testing-and-validation)
+  - [User Testing](#user-testing)
+  - [Technical Testing](#technical-testing)
+- [Examples](#examples)
+  - [Complete Best Practices Example](#complete-best-practices-example)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Spatial Computing Best Practices Guide provides comprehensive guidelines for creating effective and user-friendly spatial computing experiences in VisionOS applications.

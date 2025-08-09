@@ -1,5 +1,45 @@
 # Performance Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [Performance Guide](#performance-guide)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+  - [Key Concepts](#key-concepts)
+- [Performance Monitoring](#performance-monitoring)
+  - [Basic Performance Monitoring](#basic-performance-monitoring)
+  - [Performance Alerts](#performance-alerts)
+- [Memory Management](#memory-management)
+  - [Memory Optimization](#memory-optimization)
+  - [Memory Monitoring](#memory-monitoring)
+- [Battery Optimization](#battery-optimization)
+  - [Battery Management](#battery-management)
+  - [Battery Monitoring](#battery-monitoring)
+- [Rendering Optimization](#rendering-optimization)
+  - [Rendering Configuration](#rendering-configuration)
+  - [Rendering Statistics](#rendering-statistics)
+- [Spatial Optimization](#spatial-optimization)
+  - [Spatial Configuration](#spatial-configuration)
+  - [Spatial Optimization Techniques](#spatial-optimization-techniques)
+- [CPU Optimization](#cpu-optimization)
+  - [CPU Configuration](#cpu-configuration)
+  - [CPU Monitoring](#cpu-monitoring)
+- [GPU Optimization](#gpu-optimization)
+  - [GPU Configuration](#gpu-configuration)
+  - [GPU Monitoring](#gpu-monitoring)
+- [Network Optimization](#network-optimization)
+  - [Network Configuration](#network-configuration)
+  - [Network Monitoring](#network-monitoring)
+- [Best Practices](#best-practices)
+  - [General Performance](#general-performance)
+  - [Spatial Computing Specific](#spatial-computing-specific)
+  - [Optimization Techniques](#optimization-techniques)
+- [Examples](#examples)
+  - [Complete Performance Example](#complete-performance-example)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Performance Guide provides comprehensive instructions for optimizing VisionOS applications for smooth 60fps+ performance, efficient memory usage, and optimal battery life.

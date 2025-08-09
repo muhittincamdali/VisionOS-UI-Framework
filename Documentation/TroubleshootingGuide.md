@@ -1,5 +1,35 @@
 # Troubleshooting Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [Troubleshooting Guide](#troubleshooting-guide)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Common Issues](#common-issues)
+  - [Framework Initialization](#framework-initialization)
+  - [Build Errors](#build-errors)
+- [Performance Problems](#performance-problems)
+  - [Low Frame Rate](#low-frame-rate)
+  - [High Memory Usage](#high-memory-usage)
+- [Audio Issues](#audio-issues)
+  - [No Spatial Audio](#no-spatial-audio)
+  - [Audio Quality Issues](#audio-quality-issues)
+- [Spatial Problems](#spatial-problems)
+  - [Hand Tracking Issues](#hand-tracking-issues)
+  - [Eye Tracking Problems](#eye-tracking-problems)
+- [Accessibility Issues](#accessibility-issues)
+  - [VoiceOver Not Working](#voiceover-not-working)
+  - [Switch Control Issues](#switch-control-issues)
+- [Debugging Tips](#debugging-tips)
+  - [Enable Debug Mode](#enable-debug-mode)
+  - [Performance Monitoring](#performance-monitoring)
+  - [Error Handling](#error-handling)
+- [Support](#support)
+  - [Getting Help](#getting-help)
+  - [Common Solutions](#common-solutions)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Troubleshooting Guide provides solutions for common issues when developing with the VisionOS UI Framework.
