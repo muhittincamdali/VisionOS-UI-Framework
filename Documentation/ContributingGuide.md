@@ -1,5 +1,51 @@
 # Contributing Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [Contributing Guide](#contributing-guide)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Fork and Clone](#fork-and-clone)
+- [Fork the repository on GitHub](#fork-the-repository-on-github)
+- [Clone your fork](#clone-your-fork)
+- [Add upstream remote](#add-upstream-remote)
+- [Development Setup](#development-setup)
+  - [Project Structure](#project-structure)
+  - [Building the Project](#building-the-project)
+- [Build the framework](#build-the-framework)
+- [Run tests](#run-tests)
+- [Build for VisionOS](#build-for-visionos)
+- [Code Standards](#code-standards)
+  - [Swift Style Guide](#swift-style-guide)
+  - [Code Example](#code-example)
+  - [Architecture Guidelines](#architecture-guidelines)
+- [Testing](#testing)
+  - [Writing Tests](#writing-tests)
+  - [Test Coverage](#test-coverage)
+- [Documentation](#documentation)
+  - [Code Documentation](#code-documentation)
+  - [Documentation Standards](#documentation-standards)
+- [Pull Request Process](#pull-request-process)
+  - [Before Submitting](#before-submitting)
+  - [Pull Request Guidelines](#pull-request-guidelines)
+  - [Example Pull Request](#example-pull-request)
+- [Description](#description)
+- [Changes](#changes)
+- [Testing](#testing)
+- [Breaking Changes](#breaking-changes)
+- [Checklist](#checklist)
+- [Code of Conduct](#code-of-conduct)
+  - [Our Standards](#our-standards)
+  - [Enforcement](#enforcement)
+  - [Reporting Issues](#reporting-issues)
+- [Getting Help](#getting-help)
+  - [Resources](#resources)
+  - [Contact](#contact)
+<!-- TOC END -->
+
+
 ## Overview
 
 Thank you for your interest in contributing to the VisionOS UI Framework! This guide provides information on how to contribute effectively.

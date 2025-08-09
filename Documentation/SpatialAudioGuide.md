@@ -1,5 +1,41 @@
 # Spatial Audio Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [Spatial Audio Guide](#spatial-audio-guide)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+  - [Key Concepts](#key-concepts)
+- [Spatial Audio Concepts](#spatial-audio-concepts)
+  - [3D Audio Positioning](#3d-audio-positioning)
+  - [Distance Attenuation](#distance-attenuation)
+- [Audio Sources](#audio-sources)
+  - [Creating Audio Sources](#creating-audio-sources)
+  - [Audio Source Configuration](#audio-source-configuration)
+- [Environmental Audio](#environmental-audio)
+  - [Environmental Audio Setup](#environmental-audio-setup)
+  - [Weather Audio Effects](#weather-audio-effects)
+- [Voice Commands](#voice-commands)
+  - [Voice Command Setup](#voice-command-setup)
+- [Audio Processing](#audio-processing)
+  - [Audio Processing Setup](#audio-processing-setup)
+  - [Audio Effects Application](#audio-effects-application)
+- [Audio Effects](#audio-effects)
+  - [Reverb Effect](#reverb-effect)
+  - [Echo Effect](#echo-effect)
+  - [Chorus Effect](#chorus-effect)
+- [Performance Optimization](#performance-optimization)
+  - [Audio Performance](#audio-performance)
+  - [Optimization Techniques](#optimization-techniques)
+- [Best Practices](#best-practices)
+  - [General Audio](#general-audio)
+  - [Spatial Audio Specific](#spatial-audio-specific)
+- [Examples](#examples)
+  - [Complete Spatial Audio Example](#complete-spatial-audio-example)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Spatial Audio Guide provides comprehensive instructions for implementing immersive 3D audio experiences in VisionOS applications. This guide covers spatial audio sources, environmental audio, voice commands, and audio processing.

@@ -1,5 +1,45 @@
 # License Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [License Guide](#license-guide)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [License Information](#license-information)
+  - [MIT License](#mit-license)
+  - [License Text](#license-text)
+- [Usage Rights](#usage-rights)
+  - [What You Can Do](#what-you-can-do)
+  - [What You Must Do](#what-you-must-do)
+- [Attribution](#attribution)
+  - [Required Attribution](#required-attribution)
+  - [Recommended Attribution](#recommended-attribution)
+- [Commercial Use](#commercial-use)
+  - [Commercial Applications](#commercial-applications)
+  - [No Royalties](#no-royalties)
+- [Modifications](#modifications)
+  - [Modifying the Code](#modifying-the-code)
+  - [Distribution of Modifications](#distribution-of-modifications)
+- [Distribution](#distribution)
+  - [Distribution Rights](#distribution-rights)
+  - [Distribution Requirements](#distribution-requirements)
+- [Include in your distribution](#include-in-your-distribution)
+- [Limitations](#limitations)
+  - [No Warranty](#no-warranty)
+  - [No Liability](#no-liability)
+- [Examples](#examples)
+  - [Proper Attribution in README](#proper-attribution-in-readme)
+- [My VisionOS App](#my-visionos-app)
+- [Dependencies](#dependencies)
+- [License](#license)
+  - [Proper Attribution in Code](#proper-attribution-in-code)
+  - [License File Example](#license-file-example)
+- [LICENSE](#license)
+- [Third-Party Licenses](#third-party-licenses)
+  - [VisionOS UI Framework](#visionos-ui-framework)
+<!-- TOC END -->
+
+
 ## Overview
 
 This guide explains the licensing terms and usage rights for the VisionOS UI Framework.

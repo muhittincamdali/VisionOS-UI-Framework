@@ -1,5 +1,58 @@
 # Configuration API
 
+<!-- TOC START -->
+## Table of Contents
+- [Configuration API](#configuration-api)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Installation](#installation)
+  - [Swift Package Manager](#swift-package-manager)
+  - [Requirements](#requirements)
+- [Quick Start](#quick-start)
+  - [Basic Import](#basic-import)
+  - [Basic Configuration](#basic-configuration)
+- [Core Components](#core-components)
+  - [ConfigurationManager](#configurationmanager)
+  - [FrameworkConfiguration](#frameworkconfiguration)
+- [Framework Configuration](#framework-configuration)
+  - [Global Configuration](#global-configuration)
+  - [ConfigurationValidator](#configurationvalidator)
+  - [ValidationResult](#validationresult)
+  - [ConfigurationError](#configurationerror)
+  - [ConfigurationWarning](#configurationwarning)
+  - [ConfigurationSuggestion](#configurationsuggestion)
+- [Spatial UI Configuration](#spatial-ui-configuration)
+  - [SpatialUIConfiguration](#spatialuiconfiguration)
+  - [WindowConfiguration](#windowconfiguration)
+  - [ComponentConfiguration](#componentconfiguration)
+- [Immersive Experience Configuration](#immersive-experience-configuration)
+  - [ImmersiveExperienceConfiguration](#immersiveexperienceconfiguration)
+  - [SpaceConfiguration](#spaceconfiguration)
+- [3D Interaction Configuration](#3d-interaction-configuration)
+  - [InteractionConfiguration](#interactionconfiguration)
+  - [HandTrackingConfiguration](#handtrackingconfiguration)
+  - [EyeTrackingConfiguration](#eyetrackingconfiguration)
+  - [VoiceCommandConfiguration](#voicecommandconfiguration)
+- [Performance Configuration](#performance-configuration)
+  - [PerformanceConfiguration](#performanceconfiguration)
+  - [MemoryConfiguration](#memoryconfiguration)
+  - [BatteryConfiguration](#batteryconfiguration)
+- [Audio Configuration](#audio-configuration)
+  - [AudioConfiguration](#audioconfiguration)
+- [Accessibility Configuration](#accessibility-configuration)
+  - [AccessibilityConfiguration](#accessibilityconfiguration)
+- [Security Configuration](#security-configuration)
+  - [SecurityConfiguration](#securityconfiguration)
+- [Network Configuration](#network-configuration)
+  - [NetworkConfiguration](#networkconfiguration)
+- [Error Handling](#error-handling)
+  - [Error Types](#error-types)
+  - [Error Handling Example](#error-handling-example)
+- [Examples](#examples)
+  - [Complete Configuration Example](#complete-configuration-example)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Configuration API provides comprehensive tools for managing and customizing all aspects of the VisionOS UI Framework. This API enables developers to configure spatial UI, immersive experiences, 3D interactions, performance settings, and more.

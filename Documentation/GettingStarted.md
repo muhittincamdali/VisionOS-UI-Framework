@@ -1,5 +1,50 @@
 # Getting Started Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [Getting Started Guide](#getting-started-guide)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Prerequisites](#prerequisites)
+  - [Development Environment](#development-environment)
+  - [Hardware Requirements](#hardware-requirements)
+  - [Knowledge Requirements](#knowledge-requirements)
+- [Installation](#installation)
+  - [Step 1: Clone the Repository](#step-1-clone-the-repository)
+- [Clone the VisionOS UI Framework repository](#clone-the-visionos-ui-framework-repository)
+- [Navigate to project directory](#navigate-to-project-directory)
+- [Install dependencies](#install-dependencies)
+  - [Step 2: Open in Xcode](#step-2-open-in-xcode)
+- [Open the project in Xcode](#open-the-project-in-xcode)
+  - [Step 3: Add to Your Project](#step-3-add-to-your-project)
+    - [Swift Package Manager](#swift-package-manager)
+    - [Xcode Project](#xcode-project)
+- [Quick Start](#quick-start)
+  - [Basic Import](#basic-import)
+  - [Initialize Framework](#initialize-framework)
+  - [Create Your First Spatial Component](#create-your-first-spatial-component)
+- [Basic Setup](#basic-setup)
+  - [Project Configuration](#project-configuration)
+  - [Basic App Structure](#basic-app-structure)
+- [Your First Spatial App](#your-first-spatial-app)
+  - [Step 1: Create the App Structure](#step-1-create-the-app-structure)
+  - [Step 2: Create the Main View](#step-2-create-the-main-view)
+  - [Step 3: Add Immersive Experience](#step-3-add-immersive-experience)
+- [Understanding Spatial Computing](#understanding-spatial-computing)
+  - [Key Concepts](#key-concepts)
+  - [Spatial Coordinate System](#spatial-coordinate-system)
+  - [Best Practices](#best-practices)
+- [Next Steps](#next-steps)
+  - [Advanced Features](#advanced-features)
+  - [Learning Resources](#learning-resources)
+  - [Community](#community)
+- [Troubleshooting](#troubleshooting)
+  - [Common Issues](#common-issues)
+  - [Debug Tips](#debug-tips)
+  - [Getting Help](#getting-help)
+<!-- TOC END -->
+
+
 ## Overview
 
 Welcome to the VisionOS UI Framework! This guide will help you get started with creating immersive spatial computing experiences for VisionOS applications.

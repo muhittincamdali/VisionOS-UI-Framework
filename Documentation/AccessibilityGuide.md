@@ -1,5 +1,51 @@
 # Accessibility Guide
 
+<!-- TOC START -->
+## Table of Contents
+- [Accessibility Guide](#accessibility-guide)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+  - [Key Concepts](#key-concepts)
+- [Accessibility Principles](#accessibility-principles)
+  - [Universal Design](#universal-design)
+  - [WCAG Guidelines](#wcag-guidelines)
+- [VoiceOver Support](#voiceover-support)
+  - [Basic VoiceOver Implementation](#basic-voiceover-implementation)
+  - [VoiceOver Best Practices](#voiceover-best-practices)
+- [Switch Control](#switch-control)
+  - [Switch Control Setup](#switch-control-setup)
+  - [Switch Control Best Practices](#switch-control-best-practices)
+- [AssistiveTouch](#assistivetouch)
+  - [AssistiveTouch Configuration](#assistivetouch-configuration)
+  - [AssistiveTouch Best Practices](#assistivetouch-best-practices)
+- [Spatial Accessibility](#spatial-accessibility)
+  - [Spatial Element Accessibility](#spatial-element-accessibility)
+  - [Spatial Navigation](#spatial-navigation)
+  - [Spatial Accessibility Best Practices](#spatial-accessibility-best-practices)
+- [Alternative Input](#alternative-input)
+  - [Alternative Input Methods](#alternative-input-methods)
+  - [Alternative Input Best Practices](#alternative-input-best-practices)
+- [Haptic Feedback](#haptic-feedback)
+  - [Haptic Feedback Implementation](#haptic-feedback-implementation)
+  - [Haptic Feedback Best Practices](#haptic-feedback-best-practices)
+- [Audio Feedback](#audio-feedback)
+  - [Audio Feedback Implementation](#audio-feedback-implementation)
+  - [Audio Feedback Best Practices](#audio-feedback-best-practices)
+- [Visual Feedback](#visual-feedback)
+  - [Visual Feedback Implementation](#visual-feedback-implementation)
+  - [Visual Feedback Best Practices](#visual-feedback-best-practices)
+- [Best Practices](#best-practices)
+  - [General Accessibility](#general-accessibility)
+  - [Spatial Computing Specific](#spatial-computing-specific)
+- [Testing](#testing)
+  - [Accessibility Testing](#accessibility-testing)
+  - [Testing Tools](#testing-tools)
+- [Examples](#examples)
+  - [Complete Accessibility Example](#complete-accessibility-example)
+<!-- TOC END -->
+
+
 ## Overview
 
 The Accessibility Guide provides comprehensive instructions for creating accessible spatial computing experiences in VisionOS applications. This guide covers VoiceOver support, Switch Control, AssistiveTouch, and other accessibility features.
