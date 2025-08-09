@@ -1,4 +1,5 @@
 # 🥽 VisionOS UI Framework
+[![CI](https://github.com/muhittincamdali/VisionOS-UI-Framework/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/muhittincamdali/VisionOS-UI-Framework/actions/workflows/ci.yml)
 
 <!-- TOC START -->
 ## Table of Contents
