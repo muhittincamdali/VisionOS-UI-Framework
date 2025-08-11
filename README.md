@@ -29,6 +29,12 @@
 
 ---
 
+## 🌟 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=muhittincamdali/VisionOS-UI-Framework&type=Date)](https://star-history.com/#muhittincamdali/VisionOS-UI-Framework&Date)
+
+---
+
 ## 📋 Table of Contents
 
 - [🚀 Overview](#-overview)
@@ -782,4 +788,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🌟 Stargazers
 
-[![Stargazers repo roster for @muhittincamdali/VisionOS-UI-Framework](https://starchart.cc/muhittincamdali/VisionOS-UI-Framework.svg)](https://github.com/muhittincamdali/VisionOS-UI-Framework/stargazers)
