@@ -766,20 +766,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📊 Project Statistics
-
-<div align="center">
-
-[![GitHub stars](https://img.shields.io/github/stars/muhittincamdali/VisionOS-UI-Framework?style=flat-square&logo=github)](https://github.com/muhittincamdali/VisionOS-UI-Framework/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/muhittincamdali/VisionOS-UI-Framework?style=flat-square&logo=github)](https://github.com/muhittincamdali/VisionOS-UI-Framework/network)
-[![GitHub issues](https://img.shields.io/github/issues/muhittincamdali/VisionOS-UI-Framework?style=flat-square&logo=github)](https://github.com/muhittincamdali/VisionOS-UI-Framework/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/muhittincamdali/VisionOS-UI-Framework?style=flat-square&logo=github)](https://github.com/muhittincamdali/VisionOS-UI-Framework/pulls)
-[![GitHub contributors](https://img.shields.io/github/contributors/muhittincamdali/VisionOS-UI-Framework?style=flat-square&logo=github)](https://github.com/muhittincamdali/VisionOS-UI-Framework/graphs/contributors)
-[![GitHub last commit](https://img.shields.io/github/last-commit/muhittincamdali/VisionOS-UI-Framework?style=flat-square&logo=github)](https://github.com/muhittincamdali/VisionOS-UI-Framework/commits/master)
-[![GitHub license](https://img.shields.io/github/license/muhittincamdali/VisionOS-UI-Framework?style=flat-square&logo=github)](https://github.com/muhittincamdali/VisionOS-UI-Framework/blob/master/LICENSE)
-
-</div>
-
-## 🌟 Stargazers
 
 [![Stargazers repo roster for @muhittincamdali/VisionOS-UI-Framework](https://starchart.cc/muhittincamdali/VisionOS-UI-Framework.svg)](https://github.com/muhittincamdali/VisionOS-UI-Framework/stargazers)
