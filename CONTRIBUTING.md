@@ -11,7 +11,7 @@ We love your input! We want to make contributing to VisionOS-UI-Framework as eas
 ## We Develop with Github
 We use GitHub to host code, to track issues and feature requests, as well as accept pull requests.
 
-## We Use [Github Flow](https://guides.github.com/introduction/flow/index.html)
+## We Use [GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow)
 Pull requests are the best way to propose changes to the codebase. We actively welcome your pull requests:
 
 1. Fork the repo and create your branch from `main`.
@@ -54,7 +54,7 @@ test: add unit tests for spatial utilities
 ## Any contributions you make will be under the MIT Software License
 In short, when you submit code changes, your submissions are understood to be under the same [MIT License](https://choosealicense.com/licenses/mit/) that covers the project. Feel free to contact the maintainers if that's a concern.
 
-## Report bugs using Github's [issue tracker](https://github.com/muhittincamdali/VisionOS-UI-Framework/issues)
+## Report bugs using GitHub's [issue tracker](https://github.com/muhittincamdali/VisionOS-UI-Framework/issues)
 We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/muhittincamdali/VisionOS-UI-Framework/issues/new); it's that easy!
 
 ## Write bug reports with detail, background, and sample code

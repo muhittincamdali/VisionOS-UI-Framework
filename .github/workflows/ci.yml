@@ -1,3 +1,53 @@
+name: ci
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '15.4'
+      - name: Cache SPM
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.swiftpm
+            .build
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+      - name: SwiftLint
+        run: |
+          brew update
+          brew install swiftlint || true
+          swiftlint || true
+      - name: Build
+        run: swift build -v
+      - name: Test with coverage
+        run: swift test --parallel --enable-code-coverage
+      - name: Export coverage (lcov)
+        run: |
+          set -e
+          PROFILE=$(find .build -name default.profdata | head -n 1)
+          TESTBINARY=$(find .build -name "*Tests.xctest" -maxdepth 5 | head -n 1)
+          if [ -n "$PROFILE" ] && [ -n "$TESTBINARY" ]; then
+            xcrun llvm-cov export "$TESTBINARY" \
+              -format="lcov" \
+              -instr-profile "$PROFILE" \
+              > coverage.lcov
+          fi
+      - name: Upload coverage to Codecov
+        if: exists('coverage.lcov')
+        uses: codecov/codecov-action@v4
+        with:
+          files: coverage.lcov
+          fail_ci_if_error: false
 name: CI
 
 on:
