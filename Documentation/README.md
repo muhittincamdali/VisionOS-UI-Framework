@@ -1,30 +1,30 @@
 # Documentation Index
 
-- [](&)Documentation/3DInteractionsAPI.md
-- [](&)Documentation/3DInteractionsGuide.md
-- [](&)Documentation/AccessibilityAPI.md
-- [](&)Documentation/AccessibilityGuide.md
-- [](&)Documentation/API-Reference.md
-- [](&)Documentation/API.md
-- [](&)Documentation/Best-Practices.md
-- [](&)Documentation/ChangelogGuide.md
-- [](&)Documentation/ConfigurationAPI.md
-- [](&)Documentation/ConfigurationGuide.md
-- [](&)Documentation/ContributingGuide.md
-- [](&)Documentation/Getting-Started.md
-- [](&)Documentation/GettingStarted.md
-- [](&)Documentation/ImmersiveExperiencesAPI.md
-- [](&)Documentation/ImmersiveExperiencesGuide.md
-- [](&)Documentation/Installation.md
-- [](&)Documentation/LicenseGuide.md
-- [](&)Documentation/PerformanceAPI.md
-- [](&)Documentation/PerformanceGuide.md
-- [](&)Documentation/SpatialAudioAPI.md
-- [](&)Documentation/SpatialAudioGuide.md
-- [](&)Documentation/SpatialComputingBestPracticesGuide.md
-- [](&)Documentation/SpatialUIAPI.md
-- [](&)Documentation/SpatialUIGuide.md
-- [](&)Documentation/TestingGuide.md
-- [](&)Documentation/Troubleshooting.md
-- [](&)Documentation/TroubleshootingGuide.md
-- [](&)Documentation/VisionOSUIFrameworkManagerAPI.md
+- [3D Interactions API](./3DInteractionsAPI.md)
+- [3D Interactions Guide](./3DInteractionsGuide.md)
+- [Accessibility API](./AccessibilityAPI.md)
+- [Accessibility Guide](./AccessibilityGuide.md)
+- [API Reference](./API-Reference.md)
+- [General API](./API.md)
+- [Best Practices](./Best-Practices.md)
+- [Changelog Guide](./ChangelogGuide.md)
+- [Configuration API](./ConfigurationAPI.md)
+- [Configuration Guide](./ConfigurationGuide.md)
+- [Contributing Guide](./ContributingGuide.md)
+- [Getting Started](./Getting-Started.md)
+- [Getting Started (Alt)](./GettingStarted.md)
+- [Immersive Experiences API](./ImmersiveExperiencesAPI.md)
+- [Immersive Experiences Guide](./ImmersiveExperiencesGuide.md)
+- [Installation](./Installation.md)
+- [License Guide](./LicenseGuide.md)
+- [Performance API](./PerformanceAPI.md)
+- [Performance Guide](./PerformanceGuide.md)
+- [Spatial Audio API](./SpatialAudioAPI.md)
+- [Spatial Audio Guide](./SpatialAudioGuide.md)
+- [Spatial Computing Best Practices](./SpatialComputingBestPracticesGuide.md)
+- [Spatial UI API](./SpatialUIAPI.md)
+- [Spatial UI Guide](./SpatialUIGuide.md)
+- [Testing Guide](./TestingGuide.md)
+- [Troubleshooting](./Troubleshooting.md)
+- [Troubleshooting Guide](./TroubleshootingGuide.md)
+- [VisionOS UI Framework Manager API](./VisionOSUIFrameworkManagerAPI.md)
