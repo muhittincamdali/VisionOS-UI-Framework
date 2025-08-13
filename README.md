@@ -1,5 +1,5 @@
 # 🥽 VisionOS UI Framework
-[![CI](https://github.com/muhittincamdali/VisionOS-UI-Framework/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/muhittincamdali/VisionOS-UI-Framework/actions/workflows/ci.yml)
+[![CI](https://github.com/muhittincamdali/VisionOS-UI-Framework/actions/workflows/ci.yml/badge.svg)
 
 
 
@@ -17,7 +17,6 @@
 ![Performance](https://img.shields.io/badge/Performance-Optimized-795548?style=for-the-badge)
 ![Architecture](https://img.shields.io/badge/Architecture-Clean-FF5722?style=for-the-badge)
 ![Swift Package Manager](https://img.shields.io/badge/SPM-Dependencies-FF6B35?style=for-the-badge)
-![CocoaPods](https://img.shields.io/badge/CocoaPods-Supported-E91E63?style=for-the-badge)
 
 **🏆 Professional VisionOS UI Framework**
 
