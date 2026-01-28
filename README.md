@@ -1,566 +1,30 @@
-# 🥽 VisionOS UI Framework
-[![CI](https://github.com/muhittincamdali/VisionOS-UI-Framework/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/muhittincamdali/VisionOS-UI-Framework/actions/workflows/ci.yml)
+# VisionOS UI Framework
 
+<p align="center">
+  <img src="Assets/banner.png" alt="VisionOS UI Framework" width="800">
+</p>
 
+<p align="center">
+  <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-5.9+-F05138?style=flat&logo=swift&logoColor=white" alt="Swift"></a>
+  <a href="https://developer.apple.com/visionos/"><img src="https://img.shields.io/badge/visionOS-1.0+-007AFF?style=flat&logo=apple&logoColor=white" alt="visionOS"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
+</p>
 
-<div align="center">
-
-![Swift](https://img.shields.io/badge/Swift-5.9+-FA7343?style=for-the-badge&logo=swift&logoColor=white)
-![VisionOS](https://img.shields.io/badge/VisionOS-1.0+-000000?style=for-the-badge&logo=apple&logoColor=white)
-![Xcode](https://img.shields.io/badge/Xcode-15.0+-007ACC?style=for-the-badge&logo=Xcode&logoColor=white)
-![RealityKit](https://img.shields.io/badge/RealityKit-3D%20Rendering-4CAF50?style=for-the-badge)
-![ARKit](https://img.shields.io/badge/ARKit-Augmented%20Reality-2196F3?style=for-the-badge)
-![Spatial](https://img.shields.io/badge/Spatial-Computing-FF9800?style=for-the-badge)
-![3D](https://img.shields.io/badge/3D-Models-9C27B0?style=for-the-badge)
-![Immersive](https://img.shields.io/badge/Immersive-Experiences-00BCD4?style=for-the-badge)
-![Gesture](https://img.shields.io/badge/Gesture-Recognition-607D8B?style=for-the-badge)
-![Performance](https://img.shields.io/badge/Performance-Optimized-795548?style=for-the-badge)
-![Architecture](https://img.shields.io/badge/Architecture-Clean-FF5722?style=for-the-badge)
-![Swift Package Manager](https://img.shields.io/badge/SPM-Dependencies-FF6B35?style=for-the-badge)
-![CocoaPods](https://img.shields.io/badge/CocoaPods-Supported-E91E63?style=for-the-badge)
-
-**🏆 Professional VisionOS UI Framework**
-
-**🥽 Advanced Spatial Computing Interface**
-
-**🌐 Immersive & Interactive Experiences**
-
-</div>
+<p align="center">
+  <b>Build spatial experiences for Apple Vision Pro with SwiftUI and RealityKit.</b>
+</p>
 
 ---
 
-## 📋 Table of Contents
-
-- [🚀 Overview](#-overview)
-- [✨ Key Features](#-key-features)
-- [🥽 Spatial UI](#-spatial-ui)
-- [🌐 Immersive Experiences](#-immersive-experiences)
-- [🎮 3D Interactions](#-3d-interactions)
-- [🚀 Quick Start](#-quick-start)
-- [📱 Usage Examples](#-usage-examples)
-- [🔧 Configuration](#-configuration)
-- [📚 Documentation](#-documentation)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-- [🙏 Acknowledgments](#-acknowledgments)
-<!-- Removed analytics widgets: keep README focused and clean -->
-
----
-
-## 🚀 Overview
-
-**VisionOS UI Framework** is the most comprehensive, professional, and feature-rich UI framework for VisionOS applications. Built with enterprise-grade standards and modern spatial computing practices, this framework provides essential tools for creating immersive, interactive, and beautiful spatial experiences.
-
-### 🎯 What Makes This Framework Special?
-
-- **🥽 Spatial UI**: Advanced spatial interface components and layouts
-- **🌐 Immersive Experiences**: Complete immersive environment creation
-- **🎮 3D Interactions**: Rich 3D interaction and manipulation tools
-- **⚡ Performance**: Optimized for spatial computing performance
-- **🎨 Customization**: Highly customizable spatial components
-- **📱 Cross-Platform**: VisionOS, iOS, and macOS support
-- **♿ Accessibility**: Spatial accessibility and alternative input
-- **📚 Learning**: Comprehensive spatial computing tutorials
-
----
-
-## ✨ Key Features
-
-### 🥽 Spatial UI
-
-* **Spatial Windows**: Floating windows and spatial containers
-* **3D Components**: 3D UI components and spatial elements
-* **Spatial Layouts**: Advanced spatial layout management
-* **Depth Management**: Z-axis and depth-based organization
-* **Spatial Navigation**: Spatial navigation and wayfinding
-* **Spatial Typography**: 3D text and typography systems
-* **Spatial Colors**: Spatial color and lighting systems
-* **Spatial Animations**: 3D animations and transitions
-
-### 🌐 Immersive Experiences
-
-* **Immersive Spaces**: Complete immersive environment creation
-* **Spatial Audio**: 3D spatial audio and sound design
-* **Environmental Effects**: Lighting, shadows, and atmospheric effects
-* **Spatial Physics**: Realistic physics and object interaction
-* **Spatial Particles**: Particle systems and visual effects
-* **Spatial Weather**: Dynamic weather and environmental systems
-* **Spatial Time**: Time-based spatial experiences
-* **Spatial Events**: Spatial event handling and management
-
-### 🎮 3D Interactions
-
-* **Hand Tracking**: Advanced hand tracking and gesture recognition
-* **Eye Tracking**: Eye movement and gaze interaction
-* **Voice Commands**: Voice recognition and spatial commands
-* **Spatial Gestures**: 3D gesture recognition and handling
-* **Object Manipulation**: 3D object manipulation and interaction
-* **Spatial Selection**: 3D selection and highlighting
-* **Spatial Navigation**: Spatial navigation and locomotion
-* **Spatial Collaboration**: Multi-user spatial collaboration
-
----
-
-## 🥽 Spatial UI
-
-### Spatial Window Manager
-
-```swift
-// Spatial window manager
-let spatialWindowManager = SpatialWindowManager()
-
-// Configure spatial windows
-let windowConfig = SpatialWindowConfiguration()
-windowConfig.enableFloatingWindows = true
-windowConfig.enableSpatialLayout = true
-windowConfig.enableDepthManagement = true
-windowConfig.enableSpatialNavigation = true
-
-// Setup spatial window manager
-spatialWindowManager.configure(windowConfig)
-
-// Create floating window
-let floatingWindow = SpatialWindow(
-    title: "Spatial App",
-    size: CGSize(width: 800, height: 600),
-    position: SpatialPosition(x: 0, y: 1.5, z: -2)
-)
-
-// Configure floating window
-floatingWindow.configure { config in
-    config.enableDragging = true
-    config.enableResizing = true
-    config.enableDepthAdjustment = true
-    config.enableSpatialAudio = true
-}
-
-// Add content to window
-floatingWindow.addContent(
-    SpatialContentView(
-        title: "Welcome to Spatial Computing",
-        content: "This is a floating window in 3D space"
-    )
-) { result in
-    switch result {
-    case .success:
-        print("✅ Floating window created")
-        print("Position: \(floatingWindow.position)")
-        print("Size: \(floatingWindow.size)")
-    case .failure(let error):
-        print("❌ Floating window creation failed: \(error)")
-    }
-}
-```
-
-### 3D Component Manager
-
-```swift
-// 3D component manager
-let componentManager = SpatialComponentManager()
-
-// Configure 3D components
-let componentConfig = SpatialComponentConfiguration()
-componentConfig.enable3DComponents = true
-componentConfig.enableSpatialLayout = true
-componentConfig.enableDepthManagement = true
-componentConfig.enableSpatialInteraction = true
-
-// Setup 3D component manager
-componentManager.configure(componentConfig)
-
-// Create 3D button
-let spatialButton = SpatialButton(
-    title: "Spatial Button",
-    position: SpatialPosition(x: 0, y: 0, z: -1),
-    size: CGSize(width: 200, height: 60)
-)
-
-// Configure 3D button
-spatialButton.configure { config in
-    config.enableHoverEffects = true
-    config.enablePressEffects = true
-    config.enableSpatialAudio = true
-    config.enableHapticFeedback = true
-}
-
-// Add 3D button
-componentManager.addSpatialButton(
-    button: spatialButton
-) { result in
-    switch result {
-    case .success:
-        print("✅ 3D button created")
-        print("Position: \(spatialButton.position)")
-        print("Size: \(spatialButton.size)")
-    case .failure(let error):
-        print("❌ 3D button creation failed: \(error)")
-    }
-}
-
-// Create 3D text
-let spatialText = SpatialText(
-    content: "Hello Spatial World!",
-    position: SpatialPosition(x: 0, y: 1, z: -1),
-    fontSize: 24,
-    color: .white
-)
-
-// Configure 3D text
-spatialText.configure { config in
-    config.enableDepth = true
-    config.enableShadows = true
-    config.enableSpatialAudio = true
-    config.enableAccessibility = true
-}
-
-// Add 3D text
-componentManager.addSpatialText(
-    text: spatialText
-) { result in
-    switch result {
-    case .success:
-        print("✅ 3D text created")
-        print("Content: \(spatialText.content)")
-        print("Position: \(spatialText.position)")
-    case .failure(let error):
-        print("❌ 3D text creation failed: \(error)")
-    }
-}
-```
-
----
-
-## 🌐 Immersive Experiences
-
-### Immersive Space Manager
-
-```swift
-// Immersive space manager
-let immersiveSpaceManager = ImmersiveSpaceManager()
-
-// Configure immersive spaces
-let spaceConfig = ImmersiveSpaceConfiguration()
-spaceConfig.enableFullImmersive = true
-spaceConfig.enableMixedReality = true
-spaceConfig.enableSpatialAudio = true
-spaceConfig.enableEnvironmentalEffects = true
-
-// Setup immersive space manager
-immersiveSpaceManager.configure(spaceConfig)
-
-// Create immersive space
-let immersiveSpace = ImmersiveSpace(
-    name: "Virtual Office",
-    type: .fullImmersive,
-    environment: .office
-)
-
-// Configure immersive space
-immersiveSpace.configure { config in
-    config.enableSpatialAudio = true
-    config.enableEnvironmentalLighting = true
-    config.enableWeatherEffects = true
-    config.enableTimeOfDay = true
-}
-
-// Add immersive space
-immersiveSpaceManager.addImmersiveSpace(
-    space: immersiveSpace
-) { result in
-    switch result {
-    case .success:
-        print("✅ Immersive space created")
-        print("Name: \(immersiveSpace.name)")
-        print("Type: \(immersiveSpace.type)")
-        print("Environment: \(immersiveSpace.environment)")
-    case .failure(let error):
-        print("❌ Immersive space creation failed: \(error)")
-    }
-}
-
-// Create mixed reality space
-let mixedRealitySpace = MixedRealitySpace(
-    name: "Augmented Living Room",
-    type: .mixedReality,
-    environment: .livingRoom
-)
-
-// Configure mixed reality space
-mixedRealitySpace.configure { config in
-    config.enablePassthrough = true
-    config.enableSpatialAnchoring = true
-    config.enableObjectOcclusion = true
-    config.enableLightingEstimation = true
-}
-
-// Add mixed reality space
-immersiveSpaceManager.addMixedRealitySpace(
-    space: mixedRealitySpace
-) { result in
-    switch result {
-    case .success:
-        print("✅ Mixed reality space created")
-        print("Name: \(mixedRealitySpace.name)")
-        print("Type: \(mixedRealitySpace.type)")
-    case .failure(let error):
-        print("❌ Mixed reality space creation failed: \(error)")
-    }
-}
-```
-
-### Spatial Audio Manager
-
-```swift
-// Spatial audio manager
-let spatialAudioManager = SpatialAudioManager()
-
-// Configure spatial audio
-let audioConfig = SpatialAudioConfiguration()
-audioConfig.enable3DAudio = true
-audioConfig.enableSpatialReverb = true
-audioConfig.enableEnvironmentalAudio = true
-audioConfig.enableVoiceCommands = true
-
-// Setup spatial audio manager
-spatialAudioManager.configure(audioConfig)
-
-// Create spatial audio source
-let spatialAudioSource = SpatialAudioSource(
-    name: "Background Music",
-    position: SpatialPosition(x: 0, y: 0, z: -5),
-    audioFile: "background_music.wav"
-)
-
-// Configure spatial audio source
-spatialAudioSource.configure { config in
-    config.enable3DPositioning = true
-    config.enableDistanceAttenuation = true
-    config.enableSpatialReverb = true
-    config.enableLooping = true
-}
-
-// Add spatial audio source
-spatialAudioManager.addAudioSource(
-    source: spatialAudioSource
-) { result in
-    switch result {
-    case .success:
-        print("✅ Spatial audio source created")
-        print("Name: \(spatialAudioSource.name)")
-        print("Position: \(spatialAudioSource.position)")
-    case .failure(let error):
-        print("❌ Spatial audio source creation failed: \(error)")
-    }
-}
-
-// Create environmental audio
-let environmentalAudio = EnvironmentalAudio(
-    environment: .forest,
-    intensity: 0.7
-)
-
-// Configure environmental audio
-environmentalAudio.configure { config in
-    config.enableDynamicWeather = true
-    config.enableTimeOfDay = true
-    config.enableSpatialVariation = true
-    config.enableUserInteraction = true
-}
-
-// Add environmental audio
-spatialAudioManager.addEnvironmentalAudio(
-    audio: environmentalAudio
-) { result in
-    switch result {
-    case .success:
-        print("✅ Environmental audio created")
-        print("Environment: \(environmentalAudio.environment)")
-        print("Intensity: \(environmentalAudio.intensity)")
-    case .failure(let error):
-        print("❌ Environmental audio creation failed: \(error)")
-    }
-}
-```
-
----
-
-## 🎮 3D Interactions
-
-### Hand Tracking Manager
-
-```swift
-// Hand tracking manager
-let handTrackingManager = HandTrackingManager()
-
-// Configure hand tracking
-let handConfig = HandTrackingConfiguration()
-handConfig.enableHandTracking = true
-handConfig.enableGestureRecognition = true
-handConfig.enableFingerTracking = true
-handConfig.enableHandPhysics = true
-
-// Setup hand tracking manager
-handTrackingManager.configure(handConfig)
-
-// Create hand tracking
-let handTracking = HandTracking(
-    enableBothHands: true,
-    enableFingerTracking: true
-)
-
-// Configure hand tracking
-handTracking.configure { config in
-    config.enableGestureRecognition = true
-    config.enableHandPhysics = true
-    config.enableSpatialInteraction = true
-    config.enableHapticFeedback = true
-}
-
-// Start hand tracking
-handTrackingManager.startHandTracking(
-    tracking: handTracking
-) { result in
-    switch result {
-    case .success(let tracking):
-        print("✅ Hand tracking started")
-        print("Hands detected: \(tracking.handsDetected)")
-        print("Gestures recognized: \(tracking.gesturesRecognized)")
-    case .failure(let error):
-        print("❌ Hand tracking failed: \(error)")
-    }
-}
-
-// Create gesture recognition
-let gestureRecognition = GestureRecognition(
-    gestures: [.point, .grab, .pinch, .wave]
-)
-
-// Configure gesture recognition
-gestureRecognition.configure { config in
-    config.enableRealTimeRecognition = true
-    config.enableGestureCombinations = true
-    config.enableCustomGestures = true
-    config.enableGestureAnalytics = true
-}
-
-// Add gesture recognition
-handTrackingManager.addGestureRecognition(
-    recognition: gestureRecognition
-) { result in
-    switch result {
-    case .success:
-        print("✅ Gesture recognition added")
-        print("Gestures: \(gestureRecognition.gestures)")
-    case .failure(let error):
-        print("❌ Gesture recognition failed: \(error)")
-    }
-}
-```
-
-### Eye Tracking Manager
-
-```swift
-// Eye tracking manager
-let eyeTrackingManager = EyeTrackingManager()
-
-// Configure eye tracking
-let eyeConfig = EyeTrackingConfiguration()
-eyeConfig.enableEyeTracking = true
-eyeConfig.enableGazeInteraction = true
-eyeConfig.enableBlinkDetection = true
-eyeConfig.enableAttentionTracking = true
-
-// Setup eye tracking manager
-eyeTrackingManager.configure(eyeConfig)
-
-// Create eye tracking
-let eyeTracking = EyeTracking(
-    enableGazeTracking: true,
-    enableBlinkDetection: true
-)
-
-// Configure eye tracking
-eyeTracking.configure { config in
-    config.enableGazeInteraction = true
-    config.enableAttentionTracking = true
-    config.enableSpatialSelection = true
-    config.enableAccessibility = true
-}
-
-// Start eye tracking
-eyeTrackingManager.startEyeTracking(
-    tracking: eyeTracking
-) { result in
-    switch result {
-    case .success(let tracking):
-        print("✅ Eye tracking started")
-        print("Gaze position: \(tracking.gazePosition)")
-        print("Attention level: \(tracking.attentionLevel)")
-    case .failure(let error):
-        print("❌ Eye tracking failed: \(error)")
-    }
-}
-
-// Create gaze interaction
-let gazeInteraction = GazeInteraction(
-    targets: ["button1", "button2", "text1"],
-    dwellTime: 1.0
-)
-
-// Configure gaze interaction
-gazeInteraction.configure { config in
-    config.enableAutoSelection = true
-    config.enableVisualFeedback = true
-    config.enableSpatialHighlighting = true
-    config.enableAccessibility = true
-}
-
-// Add gaze interaction
-eyeTrackingManager.addGazeInteraction(
-    interaction: gazeInteraction
-) { result in
-    switch result {
-    case .success:
-        print("✅ Gaze interaction added")
-        print("Targets: \(gazeInteraction.targets)")
-        print("Dwell time: \(gazeInteraction.dwellTime)s")
-    case .failure(let error):
-        print("❌ Gaze interaction failed: \(error)")
-    }
-}
-```
-
----
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-* **VisionOS 1.0+** with VisionOS 1.0+ SDK
-* **Swift 5.9+** programming language
-* **Xcode 15.0+** development environment
-* **Git** version control system
-* **Swift Package Manager** for dependency management
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/muhittincamdali/VisionOS-UI-Framework.git
-
-# Navigate to project directory
-cd VisionOS-UI-Framework
-
-# Install dependencies
-swift package resolve
-
-# Open in Xcode
-open Package.swift
-```
-
-### Swift Package Manager
-
-Add the framework to your project:
+## Features
+
+- **Spatial UI Components** — Windows, volumes, and immersive spaces
+- **3D Content** — RealityKit integration for 3D models
+- **Eye & Hand Tracking** — Gesture recognition in spatial computing
+- **Immersive Experiences** — Full, mixed, and progressive immersion
+- **Ornaments** — Floating UI elements attached to windows
+
+## Installation
 
 ```swift
 dependencies: [
@@ -568,199 +32,271 @@ dependencies: [
 ]
 ```
 
-### Basic Setup
+## Quick Start
+
+### Basic Window
 
 ```swift
-import VisionOSUIFramework
+import SwiftUI
 
-// Initialize VisionOS UI framework manager
-let visionOSUIManager = VisionOSUIFrameworkManager()
-
-// Configure VisionOS UI framework
-let uiConfig = VisionOSUIFrameworkConfiguration()
-uiConfig.enableSpatialUI = true
-uiConfig.enableImmersiveExperiences = true
-uiConfig.enable3DInteractions = true
-uiConfig.enableSpatialAudio = true
-
-// Start VisionOS UI framework manager
-visionOSUIManager.start(with: uiConfig)
-
-// Configure spatial performance
-visionOSUIManager.configureSpatialPerformance { config in
-    config.enableOptimizedRendering = true
-    config.enableSpatialOptimization = true
-    config.enableAccessibility = true
+@main
+struct MyVisionApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+        .windowStyle(.automatic)
+    }
 }
-```
 
----
-
-## 📱 Usage Examples
-
-### Simple Spatial Window
-
-```swift
-// Simple spatial window
-let simpleSpatialWindow = SimpleSpatialWindow()
-
-// Create spatial window
-simpleSpatialWindow.createWindow(
-    title: "My Spatial App",
-    size: CGSize(width: 600, height: 400)
-) { result in
-    switch result {
-    case .success(let window):
-        print("✅ Spatial window created")
-        print("Title: \(window.title)")
-        print("Size: \(window.size)")
-    case .failure(let error):
-        print("❌ Spatial window creation failed: \(error)")
+struct ContentView: View {
+    var body: some View {
+        VStack {
+            Text("Hello, Vision Pro!")
+                .font(.extraLargeTitle)
+            
+            Model3D(named: "Globe") { model in
+                model
+                    .resizable()
+                    .scaledToFit()
+            } placeholder: {
+                ProgressView()
+            }
+            .frame(width: 300, height: 300)
+        }
+        .padding()
     }
 }
 ```
 
-### Simple 3D Component
+### Volume (3D Space)
 
 ```swift
-// Simple 3D component
-let simple3DComponent = Simple3DComponent()
+@main
+struct VolumeApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+        
+        WindowGroup(id: "volume") {
+            VolumeContent()
+        }
+        .windowStyle(.volumetric)
+        .defaultSize(width: 0.5, height: 0.5, depth: 0.5, in: .meters)
+    }
+}
 
-// Create 3D button
-simple3DComponent.createButton(
-    title: "3D Button",
-    position: SpatialPosition(x: 0, y: 0, z: -1)
-) { result in
-    switch result {
-    case .success(let button):
-        print("✅ 3D button created")
-        print("Title: \(button.title)")
-        print("Position: \(button.position)")
-    case .failure(let error):
-        print("❌ 3D button creation failed: \(error)")
+struct VolumeContent: View {
+    var body: some View {
+        RealityView { content in
+            let sphere = MeshResource.generateSphere(radius: 0.1)
+            let material = SimpleMaterial(color: .blue, isMetallic: true)
+            let entity = ModelEntity(mesh: sphere, materials: [material])
+            content.add(entity)
+        }
     }
 }
 ```
 
----
-
-## 🔧 Configuration
-
-### VisionOS UI Framework Configuration
+### Immersive Space
 
 ```swift
-// Configure VisionOS UI framework settings
-let uiConfig = VisionOSUIFrameworkConfiguration()
+@main
+struct ImmersiveApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+        
+        ImmersiveSpace(id: "immersive") {
+            ImmersiveView()
+        }
+        .immersionStyle(selection: .constant(.mixed), in: .mixed, .full)
+    }
+}
 
-// Enable framework features
-uiConfig.enableSpatialUI = true
-uiConfig.enableImmersiveExperiences = true
-uiConfig.enable3DInteractions = true
-uiConfig.enableSpatialAudio = true
+struct ContentView: View {
+    @Environment(\.openImmersiveSpace) var openImmersiveSpace
+    @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
+    @State private var isImmersive = false
+    
+    var body: some View {
+        Button(isImmersive ? "Exit" : "Enter Immersive") {
+            Task {
+                if isImmersive {
+                    await dismissImmersiveSpace()
+                } else {
+                    await openImmersiveSpace(id: "immersive")
+                }
+                isImmersive.toggle()
+            }
+        }
+    }
+}
 
-// Set spatial UI settings
-uiConfig.enableFloatingWindows = true
-uiConfig.enableSpatialLayout = true
-uiConfig.enableDepthManagement = true
-uiConfig.enableSpatialNavigation = true
-
-// Set immersive experience settings
-uiConfig.enableFullImmersive = true
-uiConfig.enableMixedReality = true
-uiConfig.enableEnvironmentalEffects = true
-uiConfig.enableSpatialPhysics = true
-
-// Set 3D interaction settings
-uiConfig.enableHandTracking = true
-uiConfig.enableEyeTracking = true
-uiConfig.enableVoiceCommands = true
-uiConfig.enableSpatialGestures = true
-
-// Apply configuration
-visionOSUIManager.configure(uiConfig)
+struct ImmersiveView: View {
+    var body: some View {
+        RealityView { content in
+            // Add 3D content to the immersive space
+            let floor = ModelEntity(
+                mesh: .generatePlane(width: 10, depth: 10),
+                materials: [SimpleMaterial(color: .gray, isMetallic: false)]
+            )
+            floor.position = [0, 0, 0]
+            content.add(floor)
+        }
+    }
+}
 ```
 
+### Ornaments
+
+```swift
+struct WindowWithOrnament: View {
+    var body: some View {
+        NavigationStack {
+            ContentView()
+        }
+        .ornament(attachmentAnchor: .scene(.bottom)) {
+            HStack(spacing: 20) {
+                Button(action: {}) {
+                    Label("Play", systemImage: "play.fill")
+                }
+                Button(action: {}) {
+                    Label("Pause", systemImage: "pause.fill")
+                }
+                Button(action: {}) {
+                    Label("Stop", systemImage: "stop.fill")
+                }
+            }
+            .padding()
+            .glassBackgroundEffect()
+        }
+    }
+}
+```
+
+### Hand Tracking Gestures
+
+```swift
+struct GestureView: View {
+    @State private var scale: CGFloat = 1.0
+    @State private var rotation: Angle = .zero
+    
+    var body: some View {
+        Model3D(named: "Object")
+            .scaleEffect(scale)
+            .rotation3DEffect(rotation, axis: (x: 0, y: 1, z: 0))
+            .gesture(
+                MagnifyGesture()
+                    .onChanged { value in
+                        scale = value.magnification
+                    }
+            )
+            .gesture(
+                RotateGesture3D()
+                    .onChanged { value in
+                        rotation = value.rotation
+                    }
+            )
+    }
+}
+```
+
+### Hover Effects
+
+```swift
+struct HoverCard: View {
+    var body: some View {
+        VStack {
+            Image(systemName: "star.fill")
+                .font(.largeTitle)
+            Text("Hover Me")
+        }
+        .padding(30)
+        .background(.regularMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .hoverEffect(.highlight)
+    }
+}
+```
+
+## Spatial Design Guidelines
+
+### Depth & Layering
+```swift
+// Use z-offset for depth
+VStack { ... }
+    .offset(z: 50) // Points toward user
+
+// Glass material for floating panels
+.glassBackgroundEffect()
+```
+
+### Sizing
+```swift
+// Use meters for volumetric content
+.defaultSize(width: 1.0, height: 1.0, depth: 1.0, in: .meters)
+
+// Use points for windows
+.defaultSize(width: 1200, height: 800)
+```
+
+### Eye Comfort
+```swift
+// Comfortable viewing distance: 1-2 meters
+// Avoid rapid movements
+// Use subtle animations
+withAnimation(.easeInOut(duration: 0.5)) { ... }
+```
+
+## Project Structure
+
+```
+VisionOS-UI-Framework/
+├── Sources/
+│   ├── Scenes/
+│   │   ├── WindowScene.swift
+│   │   ├── VolumeScene.swift
+│   │   └── ImmersiveScene.swift
+│   ├── Components/
+│   │   ├── SpatialButton.swift
+│   │   └── Ornaments.swift
+│   ├── RealityKit/
+│   │   └── EntityHelpers.swift
+│   └── Utils/
+├── Examples/
+└── Tests/
+```
+
+## Requirements
+
+- visionOS 1.0+
+- Xcode 15.0+
+- Swift 5.9+
+
+## Documentation
+
+- [Getting Started](Documentation/GettingStarted.md)
+- [Windows & Volumes](Documentation/WindowsVolumes.md)
+- [Immersive Spaces](Documentation/ImmersiveSpaces.md)
+- [RealityKit Integration](Documentation/RealityKit.md)
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+MIT License. See [LICENSE](LICENSE).
+
+## Author
+
+**Muhittin Camdali** — [@muhittincamdali](https://github.com/muhittincamdali)
+
 ---
 
-## 📚 Documentation
-
-### API Documentation
-
-Comprehensive API documentation is available for all public interfaces:
-
-* [VisionOS UI Framework Manager API](Documentation/VisionOSUIFrameworkManagerAPI.md) - Core framework functionality
-* [Spatial UI API](Documentation/SpatialUIAPI.md) - Spatial UI features
-* [Immersive Experiences API](Documentation/ImmersiveExperiencesAPI.md) - Immersive experience capabilities
-* [3D Interactions API](Documentation/3DInteractionsAPI.md) - 3D interaction features
-* [Spatial Audio API](Documentation/SpatialAudioAPI.md) - Spatial audio capabilities
-* [Performance API](Documentation/PerformanceAPI.md) - Performance optimization
-* [Configuration API](Documentation/ConfigurationAPI.md) - Configuration options
-* [Accessibility API](Documentation/AccessibilityAPI.md) - Accessibility features
-
-### Integration Guides
-
-* [Getting Started Guide](Documentation/GettingStarted.md) - Quick start tutorial
-* [Spatial UI Guide](Documentation/SpatialUIGuide.md) - Spatial UI setup
-* [Immersive Experiences Guide](Documentation/ImmersiveExperiencesGuide.md) - Immersive experience setup
-* [3D Interactions Guide](Documentation/3DInteractionsGuide.md) - 3D interaction setup
-* [Spatial Audio Guide](Documentation/SpatialAudioGuide.md) - Spatial audio setup
-* [Performance Guide](Documentation/PerformanceGuide.md) - Performance optimization
-* [Accessibility Guide](Documentation/AccessibilityGuide.md) - Accessibility features
-* [Spatial Computing Best Practices Guide](Documentation/SpatialComputingBestPracticesGuide.md) - Spatial computing best practices
-
-### Examples
-
-* [Basic Examples](Examples/BasicExamples/) - Simple spatial UI implementations
-* [Advanced Examples](Examples/AdvancedExamples/) - Complex spatial scenarios
-* [Spatial UI Examples](Examples/SpatialUIExamples/) - Spatial UI examples
-* [Immersive Experience Examples](Examples/ImmersiveExperienceExamples/) - Immersive experience examples
-* [3D Interaction Examples](Examples/3DInteractionExamples/) - 3D interaction examples
-* [Spatial Audio Examples](Examples/SpatialAudioExamples/) - Spatial audio examples
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-### Development Setup
-
-1. **Fork** the repository
-2. **Create feature branch** (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open Pull Request**
-
-### Code Standards
-
-* Follow Swift API Design Guidelines
-* Maintain 100% test coverage
-* Use meaningful commit messages
-* Update documentation as needed
-* Follow spatial computing best practices
-* Implement proper error handling
-* Add comprehensive examples
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-* **Apple** for the excellent VisionOS development platform
-* **The Swift Community** for inspiration and feedback
-* **All Contributors** who help improve this framework
-* **Spatial Computing Community** for best practices and standards
-* **Open Source Community** for continuous innovation
-* **VisionOS Developer Community** for spatial insights
-* **AR/VR Community** for immersive expertise
-
----
-
-**⭐ Star this repository if it helped you!**
-
----
+<p align="center">
+  <sub>Building the future of spatial computing ❤️</sub>
+</p>
