@@ -1,30 +1,102 @@
 # VisionOS UI Framework
 
+```
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                                                                               ║
+║   ██╗   ██╗██╗███████╗██╗ ██████╗ ███╗   ██╗ ██████╗ ███████╗                ║
+║   ██║   ██║██║██╔════╝██║██╔═══██╗████╗  ██║██╔═══██╗██╔════╝                ║
+║   ██║   ██║██║███████╗██║██║   ██║██╔██╗ ██║██║   ██║███████╗                ║
+║   ╚██╗ ██╔╝██║╚════██║██║██║   ██║██║╚██╗██║██║   ██║╚════██║                ║
+║    ╚████╔╝ ██║███████║██║╚██████╔╝██║ ╚████║╚██████╔╝███████║                ║
+║     ╚═══╝  ╚═╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚══════╝                ║
+║                                                                               ║
+║              🥽 Spatial UI Components for Apple Vision Pro 🥽                 ║
+║                                                                               ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+```
+
 <p align="center">
-  <img src="Assets/banner.png" alt="VisionOS UI Framework" width="800">
+  <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-5.9+-F05138?style=flat&logo=swift&logoColor=white" alt="Swift 5.9+"></a>
+  <a href="https://developer.apple.com/visionos/"><img src="https://img.shields.io/badge/visionOS-1.0+-007AFF?style=flat&logo=apple&logoColor=white" alt="visionOS 1.0+"></a>
+  <a href="https://developer.apple.com/visionos/"><img src="https://img.shields.io/badge/visionOS-2.0-00C7BE?style=flat&logo=apple&logoColor=white" alt="visionOS 2.0"></a>
+  <a href="https://swift.org/package-manager/"><img src="https://img.shields.io/badge/SPM-Compatible-brightgreen.svg" alt="SPM Compatible"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License"></a>
+  <a href="https://github.com/muhittincamdali/VisionOS-UI-Framework/actions"><img src="https://github.com/muhittincamdali/VisionOS-UI-Framework/workflows/CI/badge.svg" alt="CI Status"></a>
 </p>
 
 <p align="center">
-  <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-5.9+-F05138?style=flat&logo=swift&logoColor=white" alt="Swift"></a>
-  <a href="https://developer.apple.com/visionos/"><img src="https://img.shields.io/badge/visionOS-1.0+-007AFF?style=flat&logo=apple&logoColor=white" alt="visionOS"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
+  <b>The most comprehensive UI framework for building spatial experiences on Apple Vision Pro.</b>
+  <br>
+  <i>Build immersive apps faster with production-ready components, gestures, and spatial patterns.</i>
 </p>
 
 <p align="center">
-  <b>Build spatial experiences for Apple Vision Pro with SwiftUI and RealityKit.</b>
+  <a href="#-features">Features</a> •
+  <a href="#-installation">Installation</a> •
+  <a href="#-quick-start">Quick Start</a> •
+  <a href="#-components">Components</a> •
+  <a href="#-documentation">Documentation</a>
 </p>
 
 ---
 
-## Features
+## 🌟 Why VisionOS UI Framework?
 
-- **Spatial UI Components** — Windows, volumes, and immersive spaces
-- **3D Content** — RealityKit integration for 3D models
-- **Eye & Hand Tracking** — Gesture recognition in spatial computing
-- **Immersive Experiences** — Full, mixed, and progressive immersion
-- **Ornaments** — Floating UI elements attached to windows
+Building for Apple Vision Pro is **hard**. The spatial computing paradigm is completely different from traditional iOS/macOS development. This framework solves that by providing:
 
-## Installation
+| Challenge | Our Solution |
+|-----------|--------------|
+| Complex 3D UI layouts | Pre-built spatial components |
+| Hand gesture recognition | Declarative gesture API |
+| Eye tracking integration | Built-in gaze handlers |
+| Window/Volume management | Automatic scene orchestration |
+| Ornament positioning | Smart attachment system |
+| Immersive transitions | Animated space transitions |
+
+---
+
+## ✨ Features
+
+### 🎨 Spatial UI Components
+```
+┌─────────────────────────────────────────────────────────────┐
+│  ┌─────────────┐   ┌─────────────┐   ┌─────────────┐       │
+│  │  Spatial    │   │   Glass     │   │  Floating   │       │
+│  │   Cards     │   │   Panels    │   │  Ornaments  │       │
+│  └─────────────┘   └─────────────┘   └─────────────┘       │
+│                                                             │
+│  ┌─────────────┐   ┌─────────────┐   ┌─────────────┐       │
+│  │    3D       │   │  Immersive  │   │   Portal    │       │
+│  │  Buttons    │   │   Spaces    │   │   Views     │       │
+│  └─────────────┘   └─────────────┘   └─────────────┘       │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 👆 Advanced Gestures
+- **Pinch** — Select and confirm
+- **Drag** — Move objects in 3D space  
+- **Rotate** — Two-hand rotation gestures
+- **Zoom** — Scale objects naturally
+- **Long Look** — Eye-tracking activation
+- **Custom** — Build your own spatial gestures
+
+### 🎯 Key Features
+- ✅ **50+ Spatial Components** — Cards, panels, buttons, ornaments
+- ✅ **Hand Tracking** — Native gesture recognition
+- ✅ **Eye Tracking** — Gaze-based interactions
+- ✅ **RealityKit Integration** — Seamless 3D content
+- ✅ **Immersive Spaces** — Full, mixed, progressive modes
+- ✅ **Window Management** — Multi-window orchestration
+- ✅ **Accessibility** — VoiceOver, Switch Control, Pointer
+- ✅ **visionOS 2.0 Ready** — Latest APIs supported
+
+---
+
+## 📦 Installation
+
+### Swift Package Manager (Recommended)
+
+Add to your `Package.swift`:
 
 ```swift
 dependencies: [
@@ -32,271 +104,311 @@ dependencies: [
 ]
 ```
 
-## Quick Start
+Or in Xcode: `File > Add Package Dependencies...` and enter:
+```
+https://github.com/muhittincamdali/VisionOS-UI-Framework.git
+```
 
-### Basic Window
+---
+
+## 🚀 Quick Start
+
+### 1. Basic Spatial App
 
 ```swift
 import SwiftUI
+import VisionOSUI
 
 @main
 struct MyVisionApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-        }
-        .windowStyle(.automatic)
-    }
-}
-
-struct ContentView: View {
-    var body: some View {
-        VStack {
-            Text("Hello, Vision Pro!")
-                .font(.extraLargeTitle)
-            
-            Model3D(named: "Globe") { model in
-                model
-                    .resizable()
-                    .scaledToFit()
-            } placeholder: {
-                ProgressView()
-            }
-            .frame(width: 300, height: 300)
-        }
-        .padding()
-    }
-}
-```
-
-### Volume (3D Space)
-
-```swift
-@main
-struct VolumeApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-        
-        WindowGroup(id: "volume") {
-            VolumeContent()
+            SpatialContentView()
         }
         .windowStyle(.volumetric)
-        .defaultSize(width: 0.5, height: 0.5, depth: 0.5, in: .meters)
+        .defaultSize(width: 1, height: 1, depth: 1, in: .meters)
     }
 }
 
-struct VolumeContent: View {
+struct SpatialContentView: View {
     var body: some View {
-        RealityView { content in
-            let sphere = MeshResource.generateSphere(radius: 0.1)
-            let material = SimpleMaterial(color: .blue, isMetallic: true)
-            let entity = ModelEntity(mesh: sphere, materials: [material])
-            content.add(entity)
-        }
-    }
-}
-```
-
-### Immersive Space
-
-```swift
-@main
-struct ImmersiveApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-        
-        ImmersiveSpace(id: "immersive") {
-            ImmersiveView()
-        }
-        .immersionStyle(selection: .constant(.mixed), in: .mixed, .full)
-    }
-}
-
-struct ContentView: View {
-    @Environment(\.openImmersiveSpace) var openImmersiveSpace
-    @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
-    @State private var isImmersive = false
-    
-    var body: some View {
-        Button(isImmersive ? "Exit" : "Enter Immersive") {
-            Task {
-                if isImmersive {
-                    await dismissImmersiveSpace()
-                } else {
-                    await openImmersiveSpace(id: "immersive")
+        SpatialCard(style: .glass) {
+            VStack(spacing: 24) {
+                Text("Welcome to Spatial Computing")
+                    .font(.extraLargeTitle)
+                
+                SpatialButton("Get Started", style: .primary) {
+                    // Action
                 }
-                isImmersive.toggle()
             }
-        }
-    }
-}
-
-struct ImmersiveView: View {
-    var body: some View {
-        RealityView { content in
-            // Add 3D content to the immersive space
-            let floor = ModelEntity(
-                mesh: .generatePlane(width: 10, depth: 10),
-                materials: [SimpleMaterial(color: .gray, isMetallic: false)]
-            )
-            floor.position = [0, 0, 0]
-            content.add(floor)
-        }
-    }
-}
-```
-
-### Ornaments
-
-```swift
-struct WindowWithOrnament: View {
-    var body: some View {
-        NavigationStack {
-            ContentView()
         }
         .ornament(attachmentAnchor: .scene(.bottom)) {
-            HStack(spacing: 20) {
-                Button(action: {}) {
-                    Label("Play", systemImage: "play.fill")
-                }
-                Button(action: {}) {
-                    Label("Pause", systemImage: "pause.fill")
-                }
-                Button(action: {}) {
-                    Label("Stop", systemImage: "stop.fill")
-                }
+            HStack {
+                SpatialIcon(systemName: "hand.tap")
+                Text("Tap to interact")
             }
-            .padding()
             .glassBackgroundEffect()
         }
     }
 }
 ```
 
-### Hand Tracking Gestures
+### 2. Immersive Experience
 
 ```swift
-struct GestureView: View {
-    @State private var scale: CGFloat = 1.0
-    @State private var rotation: Angle = .zero
+import SwiftUI
+import VisionOSUI
+import RealityKit
+
+struct ImmersiveView: View {
+    @Environment(\.openImmersiveSpace) var openSpace
+    @Environment(\.dismissImmersiveSpace) var dismissSpace
     
     var body: some View {
-        Model3D(named: "Object")
-            .scaleEffect(scale)
-            .rotation3DEffect(rotation, axis: (x: 0, y: 1, z: 0))
-            .gesture(
-                MagnifyGesture()
-                    .onChanged { value in
-                        scale = value.magnification
-                    }
-            )
-            .gesture(
-                RotateGesture3D()
-                    .onChanged { value in
-                        rotation = value.rotation
-                    }
-            )
-    }
-}
-```
-
-### Hover Effects
-
-```swift
-struct HoverCard: View {
-    var body: some View {
         VStack {
-            Image(systemName: "star.fill")
-                .font(.largeTitle)
-            Text("Hover Me")
+            SpatialButton("Enter Immersive Mode") {
+                await openSpace(id: "MyImmersiveSpace")
+            }
         }
-        .padding(30)
-        .background(.regularMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 16))
-        .hoverEffect(.highlight)
+    }
+}
+
+struct MyImmersiveSpace: ImmersiveSpace {
+    var body: some ImmersiveSpaceContent {
+        RealityView { content in
+            // Add 3D content
+            let sphere = ModelEntity(mesh: .generateSphere(radius: 0.5))
+            sphere.position = [0, 1.5, -2]
+            content.add(sphere)
+        }
+        .gesture(
+            SpatialTapGesture()
+                .targetedToAnyEntity()
+                .onEnded { value in
+                    // Handle tap on 3D objects
+                }
+        )
     }
 }
 ```
 
-## Spatial Design Guidelines
+### 3. Hand Gesture Recognition
 
-### Depth & Layering
 ```swift
-// Use z-offset for depth
-VStack { ... }
-    .offset(z: 50) // Points toward user
+import VisionOSUI
 
-// Glass material for floating panels
-.glassBackgroundEffect()
+struct GestureView: View {
+    @State private var scale: Float = 1.0
+    @State private var rotation: Rotation3D = .identity
+    
+    var body: some View {
+        Model3D(named: "MyModel")
+            .spatialGestures(
+                .pinch { scale in
+                    self.scale = scale
+                },
+                .rotate { rotation in
+                    self.rotation = rotation
+                }
+            )
+            .scaleEffect(scale)
+            .rotation3DEffect(rotation)
+    }
+}
 ```
 
-### Sizing
+---
+
+## 🧩 Components
+
+### Spatial Cards
+
 ```swift
-// Use meters for volumetric content
-.defaultSize(width: 1.0, height: 1.0, depth: 1.0, in: .meters)
+// Glass morphism card
+SpatialCard(style: .glass) {
+    Text("Glass Card")
+}
 
-// Use points for windows
-.defaultSize(width: 1200, height: 800)
+// Solid card with depth
+SpatialCard(style: .solid, depth: 20) {
+    Text("Solid Card")
+}
+
+// Interactive card
+SpatialCard(style: .interactive) {
+    Text("Tap Me")
+}
+.onSpatialTap {
+    // Handle tap
+}
 ```
 
-### Eye Comfort
+### Ornaments
+
 ```swift
-// Comfortable viewing distance: 1-2 meters
-// Avoid rapid movements
-// Use subtle animations
-withAnimation(.easeInOut(duration: 0.5)) { ... }
+// Bottom ornament
+.ornament(alignment: .bottom) {
+    ToolbarView()
+}
+
+// Leading ornament
+.ornament(alignment: .leading, offset: 20) {
+    NavigationView()
+}
+
+// Floating ornament
+.floatingOrnament(position: .topTrailing) {
+    CloseButton()
+}
 ```
 
-## Project Structure
+### Spatial Buttons
+
+```swift
+// Primary action button
+SpatialButton("Continue", style: .primary) { }
+
+// Secondary button  
+SpatialButton("Cancel", style: .secondary) { }
+
+// Icon button
+SpatialIconButton(systemName: "plus") { }
+
+// 3D toggle
+Spatial3DToggle(isOn: $isEnabled) {
+    Text("Enable Feature")
+}
+```
+
+### Glass Panels
+
+```swift
+// Standard glass panel
+GlassPanel {
+    SettingsView()
+}
+
+// Tinted glass
+GlassPanel(tint: .blue.opacity(0.1)) {
+    InfoView()
+}
+
+// Bordered glass
+GlassPanel(border: true) {
+    ContentView()
+}
+```
+
+---
+
+## 📐 Architecture
 
 ```
-VisionOS-UI-Framework/
-├── Sources/
-│   ├── Scenes/
-│   │   ├── WindowScene.swift
-│   │   ├── VolumeScene.swift
-│   │   └── ImmersiveScene.swift
-│   ├── Components/
-│   │   ├── SpatialButton.swift
-│   │   └── Ornaments.swift
-│   ├── RealityKit/
-│   │   └── EntityHelpers.swift
-│   └── Utils/
-├── Examples/
-└── Tests/
+┌──────────────────────────────────────────────────────────────────┐
+│                         VisionOSUI                                │
+├──────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐     │
+│  │   Components   │  │    Gestures    │  │    Spaces      │     │
+│  ├────────────────┤  ├────────────────┤  ├────────────────┤     │
+│  │ • SpatialCard  │  │ • Pinch        │  │ • Volumetric   │     │
+│  │ • GlassPanel   │  │ • Drag3D       │  │ • Immersive    │     │
+│  │ • Ornament     │  │ • Rotate3D     │  │ • Mixed        │     │
+│  │ • SpatialBtn   │  │ • LongLook     │  │ • Portal       │     │
+│  │ • Window       │  │ • Custom       │  │ • Passthrough  │     │
+│  └────────────────┘  └────────────────┘  └────────────────┘     │
+│                                                                  │
+│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐     │
+│  │   RealityKit   │  │  Accessibility │  │    Utilities   │     │
+│  ├────────────────┤  ├────────────────┤  ├────────────────┤     │
+│  │ • Model3D      │  │ • VoiceOver    │  │ • Animations   │     │
+│  │ • Entity       │  │ • Focus        │  │ • Transitions  │     │
+│  │ • Anchors      │  │ • Haptics      │  │ • Theming      │     │
+│  │ • Physics      │  │ • Dwell        │  │ • Layout       │     │
+│  └────────────────┘  └────────────────┘  └────────────────┘     │
+│                                                                  │
+└──────────────────────────────────────────────────────────────────┘
 ```
 
-## Requirements
+---
 
-- visionOS 1.0+
-- Xcode 15.0+
-- Swift 5.9+
+## 📚 Documentation
 
-## Documentation
+| Guide | Description |
+|-------|-------------|
+| [Getting Started](Documentation/GettingStarted.md) | First steps with VisionOS UI |
+| [Components](Documentation/Components.md) | All available components |
+| [Gestures](Documentation/Gestures.md) | Hand and eye tracking |
+| [Immersive Spaces](Documentation/ImmersiveSpaces.md) | Building immersive experiences |
+| [Best Practices](Documentation/BestPractices.md) | Design guidelines |
+| [Migration Guide](Documentation/Migration.md) | Upgrading from previous versions |
 
-- [Getting Started](Documentation/GettingStarted.md)
-- [Windows & Volumes](Documentation/WindowsVolumes.md)
-- [Immersive Spaces](Documentation/ImmersiveSpaces.md)
-- [RealityKit Integration](Documentation/RealityKit.md)
+---
 
-## Contributing
+## 🛠 Requirements
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+| Requirement | Version |
+|-------------|---------|
+| visionOS | 1.0+ |
+| Swift | 5.9+ |
+| Xcode | 15.0+ |
+| Apple Vision Pro | Required for testing |
 
-## License
+---
 
-MIT License. See [LICENSE](LICENSE).
+## 🗺️ Roadmap
 
-## Author
+- [x] Core spatial components
+- [x] Hand gesture recognition
+- [x] Eye tracking support
+- [x] Immersive space management
+- [x] visionOS 2.0 support
+- [ ] SharePlay integration
+- [ ] Persona support
+- [ ] Spatial audio components
+- [ ] AR anchor system
+- [ ] Enterprise features
 
-**Muhittin Camdali** — [@muhittincamdali](https://github.com/muhittincamdali)
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) first.
+
+```bash
+# Clone the repo
+git clone https://github.com/muhittincamdali/VisionOS-UI-Framework.git
+
+# Open in Xcode
+cd VisionOS-UI-Framework
+open Package.swift
+
+# Run tests
+swift test
+```
+
+---
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) for details.
+
+---
+
+## 👨‍💻 Author
+
+**Muhittin Camdali**
+
+[![Twitter](https://img.shields.io/badge/Twitter-@muhittincamdali-1DA1F2?style=flat&logo=twitter&logoColor=white)](https://twitter.com/muhittincamdali)
+[![GitHub](https://img.shields.io/badge/GitHub-muhittincamdali-181717?style=flat&logo=github&logoColor=white)](https://github.com/muhittincamdali)
+[![Website](https://img.shields.io/badge/Website-muhittincamdali.com-00C7B7?style=flat&logo=netlify&logoColor=white)](https://muhittincamdali.com)
 
 ---
 
 <p align="center">
-  <sub>Building the future of spatial computing ❤️</sub>
+  <b>If this framework helps you build amazing spatial experiences, please ⭐ star the repo!</b>
+</p>
+
+<p align="center">
+  Made with ❤️ for the Apple Vision Pro community
 </p>
