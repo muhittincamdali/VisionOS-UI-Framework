@@ -203,16 +203,106 @@ struct GestureView: View {
     
     var body: some View {
         Model3D(named: "MyModel")
-            .spatialGestures(
-                .pinch { scale in
-                    self.scale = scale
-                },
-                .rotate { rotation in
-                    self.rotation = rotation
-                }
-            )
+            .spatialPinch { value in
+                scale = Float(value.scale)
+            }
+            .spatialRotation { value in
+                rotation = Rotation3D(angle: .radians(value.rotation), axis: .y)
+            }
             .scaleEffect(scale)
             .rotation3DEffect(rotation)
+    }
+}
+```
+
+### 4. Eye Tracking Integration
+
+```swift
+import VisionOSUI
+
+struct EyeTrackingView: View {
+    @State private var isLooking = false
+    @State private var dwellProgress: Double = 0
+    
+    var body: some View {
+        SpatialCard(style: .glass) {
+            VStack {
+                Image(systemName: isLooking ? "eye.fill" : "eye")
+                    .font(.system(size: 60))
+                    .foregroundStyle(isLooking ? .green : .gray)
+                
+                Text(isLooking ? "Looking at me!" : "Look here...")
+                
+                if isLooking {
+                    ProgressView(value: dwellProgress)
+                        .progressViewStyle(.circular)
+                }
+            }
+        }
+        .spatialHover(
+            hoverDistance: 0.8,
+            onEntered: { isLooking = true },
+            onExited: { 
+                isLooking = false
+                dwellProgress = 0
+            },
+            onMoved: { value in
+                dwellProgress = min(1.0, dwellProgress + 0.01)
+                if dwellProgress >= 1.0 {
+                    // Dwell activation!
+                    triggerAction()
+                }
+            }
+        )
+    }
+}
+```
+
+### 5. Multi-Window Management
+
+```swift
+import VisionOSUI
+
+@main
+struct MultiWindowApp: App {
+    @Environment(\.openWindow) var openWindow
+    @Environment(\.dismissWindow) var dismissWindow
+    
+    var body: some Scene {
+        // Main window
+        WindowGroup(id: "main") {
+            MainView()
+        }
+        .windowStyle(.plain)
+        
+        // Settings panel (volumetric)
+        WindowGroup(id: "settings") {
+            SettingsPanel()
+        }
+        .windowStyle(.volumetric)
+        .defaultSize(width: 0.6, height: 0.4, depth: 0.1, in: .meters)
+        
+        // Immersive space
+        ImmersiveSpace(id: "immersive") {
+            ImmersiveExperience()
+        }
+        .immersionStyle(selection: .constant(.mixed), in: .mixed)
+    }
+}
+
+struct MainView: View {
+    @Environment(\.openWindow) var openWindow
+    
+    var body: some View {
+        VStack(spacing: 20) {
+            SpatialButton("Open Settings") {
+                openWindow(id: "settings")
+            }
+            
+            SpatialButton("Enter Immersive", style: .primary) {
+                // Opens immersive space
+            }
+        }
     }
 }
 ```
@@ -303,31 +393,81 @@ GlassPanel(border: true) {
 
 ## 📐 Architecture
 
+```mermaid
+graph TD
+    A[VisionOSUI Framework] --> B[🎨 Components]
+    A --> C[👆 Gestures]
+    A --> D[🌌 Spaces]
+    A --> E[🔧 Utilities]
+    
+    B --> B1[SpatialCard]
+    B --> B2[GlassPanel]
+    B --> B3[SpatialButton]
+    B --> B4[Ornaments]
+    B --> B5[SpatialModal]
+    B --> B6[SpatialList]
+    
+    C --> C1[SpatialTap]
+    C --> C2[SpatialDrag]
+    C --> C3[SpatialPinch]
+    C --> C4[SpatialRotation]
+    C --> C5[SpatialHover]
+    C --> C6[SpatialLongPress]
+    
+    D --> D1[Volumetric Windows]
+    D --> D2[Immersive Spaces]
+    D --> D3[Mixed Reality]
+    D --> D4[Passthrough]
+    
+    E --> E1[Animations]
+    E --> E2[Transitions]
+    E --> E3[Theming]
+    E --> E4[Accessibility]
+    
+    style A fill:#007AFF,stroke:#005BB5,color:#fff
+    style B fill:#34C759,stroke:#248A3D,color:#fff
+    style C fill:#FF9500,stroke:#C77800,color:#fff
+    style D fill:#AF52DE,stroke:#8944AB,color:#fff
+    style E fill:#FF3B30,stroke:#C62D24,color:#fff
 ```
-┌──────────────────────────────────────────────────────────────────┐
-│                         VisionOSUI                                │
-├──────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐     │
-│  │   Components   │  │    Gestures    │  │    Spaces      │     │
-│  ├────────────────┤  ├────────────────┤  ├────────────────┤     │
-│  │ • SpatialCard  │  │ • Pinch        │  │ • Volumetric   │     │
-│  │ • GlassPanel   │  │ • Drag3D       │  │ • Immersive    │     │
-│  │ • Ornament     │  │ • Rotate3D     │  │ • Mixed        │     │
-│  │ • SpatialBtn   │  │ • LongLook     │  │ • Portal       │     │
-│  │ • Window       │  │ • Custom       │  │ • Passthrough  │     │
-│  └────────────────┘  └────────────────┘  └────────────────┘     │
-│                                                                  │
-│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐     │
-│  │   RealityKit   │  │  Accessibility │  │    Utilities   │     │
-│  ├────────────────┤  ├────────────────┤  ├────────────────┤     │
-│  │ • Model3D      │  │ • VoiceOver    │  │ • Animations   │     │
-│  │ • Entity       │  │ • Focus        │  │ • Transitions  │     │
-│  │ • Anchors      │  │ • Haptics      │  │ • Theming      │     │
-│  │ • Physics      │  │ • Dwell        │  │ • Layout       │     │
-│  └────────────────┘  └────────────────┘  └────────────────┘     │
-│                                                                  │
-└──────────────────────────────────────────────────────────────────┘
+
+### Component Hierarchy
+
+```mermaid
+graph LR
+    subgraph Input Layer
+        H[👋 Hand Tracking]
+        E[👁️ Eye Tracking]
+        V[🎤 Voice Input]
+    end
+    
+    subgraph Gesture Processing
+        G[Gesture Recognizer]
+    end
+    
+    subgraph UI Components
+        SC[SpatialCard]
+        GP[GlassPanel]
+        SB[SpatialButton]
+    end
+    
+    subgraph Output
+        R[RealityKit Render]
+        A[Audio Feedback]
+        HF[Haptic Feedback]
+    end
+    
+    H --> G
+    E --> G
+    V --> G
+    G --> SC
+    G --> GP
+    G --> SB
+    SC --> R
+    GP --> R
+    SB --> R
+    SB --> A
+    SB --> HF
 ```
 
 ---
