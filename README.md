@@ -540,9 +540,9 @@ MIT License - see [LICENSE](LICENSE) for details.
 **Muhittin Camdali**
 
 [![Twitter](https://img.shields.io/badge/Twitter-@muhittincamdali-1DA1F2?style=flat&logo=twitter&logoColor=white)](https://twitter.com/muhittincamdali)
-[![GitHub](https://img.shields.io/badge/GitHub-muhittincamdali-181717?style=flat&logo=github&logoColor=white)](https://github.com/muhittincamdali)
-[![Website](https://img.shields.io/badge/Website-muhittincamdali.com-00C7B7?style=flat&logo=netlify&logoColor=white)](https://muhittincamdali.com)
-
+[![CI](https://github.com/muhittincamdali/VisionOS-UI-Framework/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/muhittincamdali/VisionOS-UI-Framework/actions)[![GitHub](https://img.shields.io/badge/GitHub-muhittincamdali-181717?style=flat&logo=github&logoColor=white)](https://github.com/muhittincamdali)
+[![CI](https://github.com/muhittincamdali/VisionOS-UI-Framework/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/muhittincamdali/VisionOS-UI-Framework/actions)[![Website](https://img.shields.io/badge/Website-muhittincamdali.com-00C7B7?style=flat&logo=netlify&logoColor=white)](https://muhittincamdali.com)
+[![CI](https://github.com/muhittincamdali/VisionOS-UI-Framework/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/muhittincamdali/VisionOS-UI-Framework/actions)
 ---
 
 <p align="center">
