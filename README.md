@@ -2,24 +2,29 @@
   <img src="https://img.shields.io/badge/visionOS-2.0+-purple?style=for-the-badge&logo=apple" alt="visionOS"/>
   <img src="https://img.shields.io/badge/Swift-6.0-orange?style=for-the-badge&logo=swift" alt="Swift"/>
   <img src="https://img.shields.io/badge/RealityKit-3.0-blue?style=for-the-badge" alt="RealityKit"/>
+  <img src="https://img.shields.io/badge/SPM-Compatible-FA7343?style=for-the-badge&logo=swift&logoColor=white" alt="SPM"/>
+  <img src="https://img.shields.io/github/stars/muhittincamdali/VisionOS-UI-Framework?style=for-the-badge&color=yellow" alt="Stars"/>
   <img src="https://img.shields.io/github/license/muhittincamdali/VisionOS-UI-Framework?style=for-the-badge" alt="License"/>
 </p>
 
 <h1 align="center">🥽 VisionOS UI Framework</h1>
 
 <p align="center">
-  <strong>The World's Most Comprehensive Native VisionOS UI Component Library</strong>
+  <strong>The Most Comprehensive Native VisionOS UI Component Library</strong>
 </p>
 
 <p align="center">
-  Build stunning spatial experiences for Apple Vision Pro with 50+ ready-to-use components, SwiftUI-style syntax, and zero boilerplate.
+  Build stunning spatial experiences for Apple Vision Pro with <b>50+ ready-to-use components</b>,<br/>
+  SwiftUI-style syntax, and zero boilerplate.
 </p>
 
 <p align="center">
+  <a href="#-why-visionos-ui-framework">Why This?</a> •
   <a href="#-features">Features</a> •
   <a href="#-installation">Installation</a> •
   <a href="#-quick-start">Quick Start</a> •
   <a href="#-components">Components</a> •
+  <a href="#-architecture-overview">Architecture</a> •
   <a href="#-documentation">Documentation</a>
 </p>
 
@@ -27,9 +32,17 @@
 
 ## 🌟 Why VisionOS UI Framework?
 
-**The Problem**: Building UI for Apple Vision Pro is complex. You need to understand RealityKit, ARKit, SwiftUI 3D extensions, hand tracking, eye tracking, and spatial computing paradigms.
+Building UI for Apple Vision Pro is **hard**. You need to juggle RealityKit, ARKit, SwiftUI 3D extensions, hand tracking, eye tracking, and spatial computing paradigms — all at once.
 
-**The Solution**: VisionOS UI Framework provides familiar SwiftUI-style components that abstract all the complexity. Write declarative code, get immersive experiences.
+**VisionOS UI Framework** removes that friction. You write familiar SwiftUI-style code; we handle the spatial complexity under the hood.
+
+| | Without Framework | With Framework |
+|---|---|---|
+| **3D Carousel** | ~60 lines of RealityKit + anchors | 4 lines |
+| **Hand-tracked menu** | ARKit session + joint parsing + hit testing | 6 lines |
+| **Eye gaze button** | Eye tracking authorization + dwell timer + visual feedback | 3 lines |
+| **Glass material** | ShaderGraph + custom material setup | 1 modifier |
+| **Learning curve** | Weeks | Minutes |
 
 ```swift
 // Before: 50+ lines of RealityKit boilerplate
@@ -43,6 +56,80 @@ SpatialCarousel(items: products) { product in
 }
 .radius(2.0)
 .autoRotate(speed: 0.5)
+```
+
+---
+
+## 🏗️ Architecture Overview
+
+```mermaid
+graph TB
+    subgraph App["🥽 Your visionOS App"]
+        direction TB
+        A[SwiftUI Views]
+    end
+
+    subgraph Framework["📦 VisionOS UI Framework"]
+        direction TB
+        B[Component API Layer]
+        C[Gesture Engine]
+        D[Spatial Layout Engine]
+        E[Material System]
+        F[Accessibility Bridge]
+    end
+
+    subgraph Platform["🍎 Apple Platform"]
+        direction TB
+        G[RealityKit]
+        H[ARKit]
+        I[SwiftUI]
+        J[Accessibility]
+    end
+
+    A --> B
+    B --> C
+    B --> D
+    B --> E
+    B --> F
+    C --> H
+    D --> G
+    D --> I
+    E --> G
+    F --> J
+
+    style App fill:#7B68EE,stroke:#5B4ACE,color:#fff
+    style Framework fill:#FF8C00,stroke:#CC7000,color:#fff
+    style Platform fill:#333,stroke:#555,color:#fff
+```
+
+```mermaid
+graph LR
+    subgraph Components["50+ Components"]
+        direction TB
+        S1[Spatial Carousel]
+        S2[3D Charts]
+        S3[Hand Tracking UI]
+        S4[Eye Tracking UI]
+        S5[Ornaments]
+        S6[Window Management]
+        S7[Immersive Spaces]
+        S8[AR Annotations]
+        S9[Custom Materials]
+        S10[Volume Views]
+    end
+
+    subgraph Modifiers["SwiftUI Modifiers"]
+        M1[.glassMaterial]
+        M2[.holographic]
+        M3[.neonGlow]
+        M4[.ornament]
+        M5[.spatialHover]
+    end
+
+    Components --> Modifiers
+
+    style Components fill:#4A90D9,stroke:#2E5A8B,color:#fff
+    style Modifiers fill:#50C878,stroke:#3D9B5C,color:#fff
 ```
 
 ---
@@ -67,19 +154,20 @@ SpatialCarousel(items: products) { product in
 
 ### 🚀 Key Highlights
 
-- **SwiftUI-Style API** - Familiar declarative syntax
-- **Zero Boilerplate** - Focus on your app, not plumbing
-- **Full Accessibility** - VoiceOver, pointer, switch control support
-- **Performance Optimized** - 60fps animations guaranteed
-- **Xcode Previews** - See your spatial UI in real-time
-- **Complete Documentation** - DocC documentation included
-- **100% Swift** - No Objective-C, no bridging headers
+- **SwiftUI-Style API** — Familiar declarative syntax, zero learning curve
+- **Zero Boilerplate** — Focus on your app, not plumbing
+- **Full Accessibility** — VoiceOver, pointer, switch control support
+- **Performance Optimized** — 60fps animations on Vision Pro hardware
+- **Xcode Previews** — See your spatial UI in real-time
+- **Complete Documentation** — DocC documentation included
+- **100% Swift** — No Objective-C, no bridging headers
+- **SPM Ready** — One-line integration via Swift Package Manager
 
 ---
 
 ## 📦 Installation
 
-### Swift Package Manager
+### Swift Package Manager (Recommended)
 
 ```swift
 dependencies: [
@@ -96,7 +184,7 @@ pod 'VisionOSUIFramework', '~> 1.0'
 ### Requirements
 
 | Requirement | Version |
-|-------------|---------|
+|-------------|---------| 
 | visionOS | 2.0+ |
 | Xcode | 16.0+ |
 | Swift | 6.0+ |
@@ -130,6 +218,41 @@ struct ContentView: View {
                 ToolbarItem(icon: "gear", title: "Settings") { }
             ])
         }
+    }
+}
+```
+
+### 3. Add Hand Tracking in 5 Lines
+
+```swift
+struct HandMenuView: View {
+    var body: some View {
+        HandTrackingView {
+            PalmAnchoredMenu {
+                SpatialMenuItem(icon: "plus", title: "Add") { addItem() }
+                SpatialMenuItem(icon: "trash", title: "Delete") { deleteItem() }
+            }
+            .hand(.left)
+        }
+    }
+}
+```
+
+### 4. Build a 3D Dashboard
+
+```swift
+struct DashboardView: View {
+    var body: some View {
+        SpatialSplitView {
+            BarChart3D(data: revenue, value: \.amount, label: \.quarter)
+                .depth(0.3)
+                .colorScheme(.vibrant)
+                .animateOnAppear(true)
+        } secondary: {
+            PieChart3D(data: breakdown, value: \.share, label: \.category)
+                .explode(true)
+        }
+        .splitRatio(0.6)
     }
 }
 ```
@@ -285,7 +408,7 @@ AnnotationView {
 
 ### 🎨 Custom Materials
 
-Stunning visual effects.
+Stunning visual effects with one-line modifiers.
 
 ```swift
 // Glass Material
@@ -355,7 +478,7 @@ open .build/documentation/VisionOSUIFramework/index.html
 
 ---
 
-## 🏗️ Architecture
+## 📁 Project Structure
 
 ```
 VisionOSUIFramework/
