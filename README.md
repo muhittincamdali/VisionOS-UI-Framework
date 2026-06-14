@@ -6,6 +6,8 @@
 
 ---
 
+## 🚀 Killer Feature: Volumetric Window Manager
+Spatial computing is complex. We've reduced the boilerplate of 3D window management into a single, highly intuitive API for placing and resizing volumetric scenes.
 > **🛡️ PART OF THE 2026 UNIFIED CORE**
 > This repository is a verified component of 'The Endless March' initiative. Purified for Swift 6, zero-dependency, and engineered for maximum hardware saturation.
 > 
