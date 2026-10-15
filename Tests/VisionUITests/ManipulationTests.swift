@@ -110,6 +110,27 @@ struct ManipulationStateTests {
         #expect(ManipulationState(position: [1e30, -1e30, 5]).position == [limit, -limit, 5])
     }
 
+    @Test("huge but finite quaternions keep their rotation")
+    func hugeQuaternions() {
+        // The length of these overflows to infinity; normalizing by it gave a zero quaternion and
+        // a matrix that collapsed the object to a point.
+        let huge = simd_quatf(vector: [3e38, 3e38, 0, 0])
+        let halfTurn = simd_quatf(angle: .pi, axis: simd_normalize(SIMD3<Float>(1, 1, 0)))
+        let state = ManipulationState(orientation: huge)
+        #expect(isSameRotation(state.orientation, halfTurn))
+        #expect(isClose(simd_length(state.matrix.columns.0), 1))
+
+        var turning = ManipulationState()
+        turning.rotate(by: simd_quatf(vector: [0, 3e38, 0, 3e38]))
+        #expect(isSameRotation(turning.orientation, SpatialMath.yawRotation(.pi / 2)))
+
+        var yawOnly = ManipulationState(constraints: .init(rotation: .yaw))
+        yawOnly.rotate(by: simd_quatf(vector: [0, 3e38, 0, 3e38]))
+        #expect(isSameRotation(yawOnly.orientation, SpatialMath.yawRotation(.pi / 2)))
+        // Tiny quaternions still count as zero.
+        #expect(ManipulationState(orientation: simd_quatf(vector: [1e-30, 0, 0, 0])).orientation == SpatialMath.identity)
+    }
+
     @Test("yaw-only rotation drops tilt and snaps when it ends")
     func yawOnly() {
         var state = ManipulationState(constraints: .init(rotation: .yaw, yawSnapAngle: .pi / 4))

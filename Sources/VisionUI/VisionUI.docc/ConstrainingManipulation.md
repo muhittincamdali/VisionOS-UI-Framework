@@ -66,7 +66,8 @@ For a RealityKit entity, set its transform from ``ManipulationState/matrix``, or
 
 Gesture values come from hardware and can glitch. NaN and infinite translations, factors and
 rotations, magnifications of zero or less, and zero quaternions are ignored, and a scale that
-would overflow is not applied. Scale ranges that are not positive and finite are replaced, and
+would overflow is not applied. A finite quaternion of any length is normalized without
+overflowing, so a very large one still turns the object instead of collapsing it. Scale ranges that are not positive and finite are replaced, and
 bounds with NaN or infinite corners are clamped to a finite box. Without bounds, the position
 still stays within ±``SpatialLayoutLimits/maximumLength`` on each axis, so large drags cannot add
 up to an infinite position and the object always stays within reach. Changing ``ManipulationState/constraints`` moves the object inside the new limits.

@@ -168,12 +168,10 @@ public struct ManipulationState: Sendable, Equatable {
     /// With ``ManipulationConstraints/Rotation/yaw`` only the part of `rotation` around the
     /// vertical axis is used; with ``ManipulationConstraints/Rotation/locked`` nothing happens.
     public mutating func rotate(by rotation: simd_quatf) {
-        let vector = rotation.vector
-        guard vector.x.isFinite, vector.y.isFinite, vector.z.isFinite, vector.w.isFinite,
-              simd_length(vector) > 1e-6 else { return }
+        guard let turn = Self.unitQuaternion(rotation) else { return }
         let start = rotationStart ?? orientation
         rotationStart = start
-        orientation = constrained(simd_normalize(rotation) * start)
+        orientation = constrained(turn * start)
     }
 
     /// Ends the rotation and snaps the yaw when the constraints ask for it.
@@ -214,14 +212,28 @@ public struct ManipulationState: Sendable, Equatable {
     }
 
     private func constrained(_ orientation: simd_quatf) -> simd_quatf {
-        let vector = orientation.vector
-        guard vector.x.isFinite, vector.y.isFinite, vector.z.isFinite, vector.w.isFinite,
-              simd_length(vector) > 1e-6 else { return SpatialMath.identity }
+        guard let unit = Self.unitQuaternion(orientation) else { return SpatialMath.identity }
         switch constraints.rotation {
-        case .free: return simd_normalize(orientation)
+        case .free: return unit
         case .locked: return SpatialMath.identity
-        case .yaw: return SpatialMath.yawRotation(Self.yawAngle(of: orientation))
+        case .yaw: return SpatialMath.yawRotation(Self.yawAngle(of: unit))
         }
+    }
+
+    /// `quaternion` with a length of one, or `nil` when a component is NaN or infinite or its
+    /// length is zero or almost zero.
+    static func unitQuaternion(_ quaternion: simd_quatf) -> simd_quatf? {
+        let vector = quaternion.vector
+        guard vector.x.isFinite, vector.y.isFinite, vector.z.isFinite, vector.w.isFinite else { return nil }
+        // `simd_length` of a finite vector with components near `Float.greatestFiniteMagnitude`
+        // overflows to infinity, and normalizing by it gives a zero quaternion. Dividing by the
+        // largest component first keeps the length between 1 and 2.
+        let largest = simd_reduce_max(simd_abs(vector))
+        guard largest > 0 else { return nil }
+        let scaled = vector / largest
+        let scaledLength = simd_length(scaled)
+        guard largest * scaledLength > 1e-6 else { return nil }
+        return simd_quatf(vector: scaled / scaledLength)
     }
 
     /// The angle of the twist of `rotation` around `+y`: the rotation with the tilt removed.
