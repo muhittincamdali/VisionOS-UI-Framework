@@ -45,8 +45,9 @@ remap = [
   '^https://github\.com/muhittincamdali/VisionOS-UI-Framework/(?:blob|tree)/main/(.*)$ file:///home/runner/work/VisionOS-UI-Framework/VisionOS-UI-Framework/$1',
   # The article pages on GitHub Pages are built from the .docc articles by docs.yml after a push
   # to main, so a pull request that adds an article links to a page that is not online yet. Each
-  # article URL is checked against its source file instead; the documentation root stays a live
-  # check, so a site that is down still fails.
+  # article URL is checked against its source file instead. The documentation root is not online
+  # before the first deploy either, so it is checked against the catalog's root page the same way.
+  '^https://muhittincamdali\.github\.io/VisionOS-UI-Framework/documentation/visionui/$ file:///home/runner/work/VisionOS-UI-Framework/VisionOS-UI-Framework/Sources/VisionUI/VisionUI.docc/VisionUI.md',
   '^https://muhittincamdali\.github\.io/VisionOS-UI-Framework/documentation/visionui/gettingstarted$ file:///home/runner/work/VisionOS-UI-Framework/VisionOS-UI-Framework/Sources/VisionUI/VisionUI.docc/GettingStarted.md',
   '^https://muhittincamdali\.github\.io/VisionOS-UI-Framework/documentation/visionui/arrangingcontentinspace$ file:///home/runner/work/VisionOS-UI-Framework/VisionOS-UI-Framework/Sources/VisionUI/VisionUI.docc/ArrangingContentInSpace.md',
   '^https://muhittincamdali\.github\.io/VisionOS-UI-Framework/documentation/visionui/managingimmersivespaces$ file:///home/runner/work/VisionOS-UI-Framework/VisionOS-UI-Framework/Sources/VisionUI/VisionUI.docc/ManagingImmersiveSpaces.md',
