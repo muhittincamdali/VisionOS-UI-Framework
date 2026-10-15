@@ -1,80 +1,80 @@
-# Contributing to SwiftRouter
+# Contributing
 
-First off, thank you for considering contributing to SwiftRouter! It's people like you that make SwiftRouter such a great tool.
+Thanks for taking the time to improve VisionOS UI Framework.
 
-## Code of Conduct
+## Reporting bugs
 
-This project and everyone participating in it is governed by our Code of Conduct. By participating, you are expected to uphold this code.
+Open an issue with:
 
-## How Can I Contribute?
+- the API you used and its arguments (the layout and its settings, the constraints, the
+  coordinator calls),
+- what you expected and what happened (a simulator screenshot helps for anything visual),
+- where it ran: visionOS window, volume or immersive space, or iOS or macOS,
+- the OS version and the Xcode version.
 
-### Reporting Bugs
+## Pull requests
 
-Before creating bug reports, please check the existing issues as you might find out that you don't need to create one. When you are creating a bug report, please include as many details as possible:
+1. Fork the repository and branch from `main`.
+2. Keep each pull request focused on one change.
+3. Run the tests on the three platforms:
 
-- **Use a clear and descriptive title**
-- **Describe the exact steps which reproduce the problem**
-- **Provide specific examples to demonstrate the steps**
-- **Describe the behavior you observed after following the steps**
-- **Explain which behavior you expected to see instead and why**
-- **Include Swift version and OS version**
+    ```sh
+    swift test                                    # macOS
+    xcodebuild test -scheme VisionUI \
+      -destination 'platform=visionOS Simulator,name=Apple Vision Pro'
+    xcodebuild test -scheme VisionUI \
+      -destination 'platform=iOS Simulator,name=iPhone 17'
+    ```
 
-### Suggesting Enhancements
+    The visionOS simulator is a separate download: `xcodebuild -downloadPlatform visionOS`.
 
-Enhancement suggestions are tracked as GitHub issues. When creating an enhancement suggestion, please include:
+4. If you change a README code sample, change the copy in
+   `Examples/SpatialGallery/SpatialGallery/ReadmeSamples.swift` as well. That file is what gets
+   compiled: by the example app, and by the tests through the symlink
+   `Tests/VisionUITests/ReadmeSamples.swift`. Build the app with:
 
-- **Use a clear and descriptive title**
-- **Provide a step-by-step description of the suggested enhancement**
-- **Provide specific examples to demonstrate the steps**
-- **Describe the current behavior and explain which behavior you expected to see instead**
-- **Explain why this enhancement would be useful**
+    ```sh
+    cd Examples/SpatialGallery
+    xcodebuild build -scheme SpatialGallery -destination 'generic/platform=visionOS Simulator'
+    ```
 
-### Pull Requests
+5. If a layout changes, regenerate the diagrams with `scripts/generate-screenshots.sh`; if the
+   example app looks different, recapture its screenshots with `scripts/capture-gallery.sh`.
+6. `README.md` has translations (`README.<language>.md`). Each one records the version of
+   `README.md` it follows, and CI fails while a translation is behind. If you change `README.md`
+   and cannot update the translations, say so in the pull request and they will be updated
+   before it is merged.
 
-1. Fork the repo and create your branch from `main`
-2. If you've added code that should be tested, add tests
-3. If you've changed APIs, update the documentation
-4. Ensure the test suite passes
-5. Make sure your code follows the existing style (SwiftLint)
-6. Issue that pull request!
+## Adding a layout
 
-## Development Setup
+1. Add a type in `Sources/VisionUI/Layouts/` that conforms to `SpatialLayout`. Start
+   `placements(count:)` with `SpatialLayoutLimits.clampedCount(_:)`, pass every length through
+   `SpatialLayoutLimits.clampedLength(_:minimum:fallback:)`, and document what each out-of-range
+   value becomes.
+2. Add a static shorthand in `SpatialLayout.swift`, so `.yourLayout(...)` works where a layout is
+   expected.
+3. Add tests that check the geometry itself (distances, spacing, facing) and a case with NaN,
+   infinite, negative and huge arguments, and add the layout to `LayoutLimitTests.layouts`.
+4. Add it to `LayoutKind` in the example app (which also puts it in the README diagram), to the
+   DocC landing page and to the table in `ArrangingContentInSpace.md`.
 
-```bash
-# Clone your fork
-git clone https://github.com/YOUR_USERNAME/SwiftRouter.git
+## Coordinates
 
-# Navigate to the project
-cd SwiftRouter
+Layouts, placements and the manipulation state use meters and RealityKit's axes: `+x` right,
+`+y` up, `+z` toward the viewer. SwiftUI's 3D effects use points with `+y` down. Convert only
+through `SpatialUnits`, which also flips quaternions between the two, and keep the conversion at
+the edge where a view or an entity is changed.
 
-# Open in Xcode
-open Package.swift
+## Code style
 
-# Run tests
-swift test
-```
-
-## Style Guide
-
-- Follow [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)
-- Use SwiftLint for code style consistency
-- Write meaningful commit messages following [Conventional Commits](https://www.conventionalcommits.org/)
-- Document public APIs with DocC-compatible comments
-
-## Commit Messages
-
-We follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
-
-- `feat:` A new feature
-- `fix:` A bug fix
-- `docs:` Documentation only changes
-- `style:` Code style changes (formatting, semicolons, etc)
-- `refactor:` Code change that neither fixes a bug nor adds a feature
-- `test:` Adding missing tests
-- `chore:` Changes to the build process or auxiliary tools
-
-Example: `feat(deeplink): add universal link support`
+- Follow the [Swift API Design Guidelines](https://www.swift.org/documentation/api-design-guidelines/).
+- The package builds in the Swift 6 language mode; new code should not add warnings.
+- Document public API with DocC comments (`///`); `xcodebuild docbuild` should finish without
+  warnings.
+- Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/)
+  (`feat:`, `fix:`, `docs:`, `test:`, `refactor:`, `ci:`, `chore:`).
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the MIT License.
+By contributing, you agree that your contributions are licensed under the MIT license in
+[LICENSE](LICENSE).

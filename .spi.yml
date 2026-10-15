@@ -1,0 +1,9 @@
+version: 1
+builder:
+  configs:
+    - platform: visionos
+      scheme: VisionUI
+      documentation_targets: [VisionUI]
+    - platform: ios
+      scheme: VisionUI
+    - platform: macos-spm

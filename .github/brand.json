@@ -1,0 +1,106 @@
+{
+  "name": "VisionOS UI Framework",
+  "repository": "muhittincamdali/VisionOS-UI-Framework",
+  "tagline": {
+    "en": "Spatial layouts, a carousel, immersive spaces and bounded manipulation for visionOS apps.",
+    "tr": "visionOS uygulamaları için uzamsal yerleşimler, döner galeri, sürükleyici alanlar ve sınırlı nesne hareketi.",
+    "zh-CN": "适用于 visionOS 应用的空间布局、轮播、沉浸式空间和受限操控。",
+    "ja": "visionOS アプリ向けの空間レイアウト、カルーセル、イマーシブスペース、制約付き操作。",
+    "ko": "visionOS 앱을 위한 공간 레이아웃, 캐러셀, 몰입형 공간, 제한된 조작.",
+    "es": "Diseños espaciales, carrusel, espacios inmersivos y manipulación con límites para apps de visionOS.",
+    "de": "Räumliche Layouts, Karussell, immersive Räume und begrenzte Manipulation für visionOS-Apps.",
+    "fr": "Dispositions spatiales, carrousel, espaces immersifs et manipulation bornée pour les apps visionOS.",
+    "pt-BR": "Layouts espaciais, carrossel, espaços imersivos e manipulação com limites para apps visionOS.",
+    "ru": "Раскладки в 3D, карусель, иммерсивные пространства и ограниченные манипуляции для visionOS."
+  },
+  "tags": {
+    "en": [
+      "visionOS",
+      "RealityKit",
+      "iOS · macOS",
+      "No dependencies"
+    ],
+    "tr": [
+      "visionOS",
+      "RealityKit",
+      "iOS · macOS",
+      "Bağımlılık yok"
+    ],
+    "zh-CN": [
+      "visionOS",
+      "RealityKit",
+      "iOS · macOS",
+      "无依赖"
+    ],
+    "ja": [
+      "visionOS",
+      "RealityKit",
+      "iOS · macOS",
+      "依存関係なし"
+    ],
+    "ko": [
+      "visionOS",
+      "RealityKit",
+      "iOS · macOS",
+      "의존성 없음"
+    ],
+    "es": [
+      "visionOS",
+      "RealityKit",
+      "iOS · macOS",
+      "Sin dependencias"
+    ],
+    "de": [
+      "visionOS",
+      "RealityKit",
+      "iOS · macOS",
+      "Keine Abhängigkeiten"
+    ],
+    "fr": [
+      "visionOS",
+      "RealityKit",
+      "iOS · macOS",
+      "Sans dépendance"
+    ],
+    "pt-BR": [
+      "visionOS",
+      "RealityKit",
+      "iOS · macOS",
+      "Sem dependências"
+    ],
+    "ru": [
+      "visionOS",
+      "RealityKit",
+      "iOS · macOS",
+      "Без зависимостей"
+    ]
+  },
+  "motif": "components",
+  "buttons": [
+    "start",
+    "docs",
+    "examples"
+  ],
+  "links": {
+    "docs": "https://muhittincamdali.github.io/VisionOS-UI-Framework/documentation/visionui/",
+    "examples": "Examples/"
+  },
+  "languages": [
+    "en",
+    "tr",
+    "zh-CN",
+    "ja",
+    "ko",
+    "es",
+    "de",
+    "fr",
+    "pt-BR",
+    "ru"
+  ],
+  "docc": {
+    "targets": [
+      "VisionUI"
+    ]
+  },
+  "socialTheme": "dark"
+}
