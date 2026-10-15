@@ -70,6 +70,16 @@ struct CarouselTests {
         #expect(Carousel.rotation(from: .greatestFiniteMagnitude, dragged: .greatestFiniteMagnitude, radiusInPoints: 1e-2) == .greatestFiniteMagnitude)
     }
 
+    @Test("stepping through the views wraps and never overflows")
+    func stepping() {
+        #expect(Carousel.stepped(4, by: 1, count: 5) == 0)
+        #expect(Carousel.stepped(0, by: -1, count: 5) == 4)
+        #expect(Carousel.stepped(Int.max, by: 1, count: 5) == (Carousel.wrapped(Int.max, count: 5) + 1) % 5)
+        #expect(Carousel.stepped(Int.min, by: -1, count: 5) == (Carousel.wrapped(Int.min, count: 5) + 4) % 5)
+        #expect(Carousel.stepped(2, by: Int.min, count: 5) == Carousel.wrapped(2 + Carousel.wrapped(Int.min, count: 5), count: 5))
+        #expect(Carousel.stepped(3, by: 1, count: 0) == 0)
+    }
+
     @Test("selection indices wrap around")
     func wrapping() {
         #expect(Carousel.wrapped(7, count: 5) == 2)

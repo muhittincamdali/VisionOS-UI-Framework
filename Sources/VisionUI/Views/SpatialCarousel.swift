@@ -82,8 +82,8 @@ public struct SpatialCarousel<Data: RandomAccessCollection, ID: Hashable, Conten
         .accessibilityValue(count > 0 ? "\(Self.wrapped(selection, count: count) + 1) of \(count)" : "")
         .accessibilityAdjustableAction { direction in
             switch direction {
-            case .increment: selection = Self.wrapped(selection + 1, count: count)
-            case .decrement: selection = Self.wrapped(selection - 1, count: count)
+            case .increment: selection = Self.stepped(selection, by: 1, count: count)
+            case .decrement: selection = Self.stepped(selection, by: -1, count: count)
             @unknown default: break
             }
         }
@@ -154,6 +154,15 @@ public struct SpatialCarousel<Data: RandomAccessCollection, ID: Hashable, Conten
     private struct Item {
         let index: Int
         let element: Data.Element
+    }
+
+    /// The index `delta` steps from `index`, wrapped into `0..<count`.
+    ///
+    /// The index is wrapped before the step, so `Int.max` steps to a valid index instead of
+    /// overflowing.
+    static func stepped(_ index: Int, by delta: Int, count: Int) -> Int {
+        guard count > 0 else { return 0 }
+        return wrapped(wrapped(index, count: count) + wrapped(delta, count: count), count: count)
     }
 
     /// `index` wrapped into `0..<count`; `0` when the count is zero or less.
