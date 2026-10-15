@@ -7,7 +7,11 @@ import SwiftUI
 /// view and `selection` becomes its index. Tapping a view, or setting `selection`, turns that view
 /// to the front the short way round. VoiceOver users swipe up and down to step through the views.
 ///
-/// On visionOS the ring has real depth; on iOS and macOS it is drawn with ``FlatProjection``.
+/// On visionOS the ring has real depth. It is centered on the carousel's plane, because a window
+/// shows nothing behind its plane: the views at the sides stay visible and the front view comes
+/// forward by the radius, so leave some space around the carousel. On iOS and macOS the ring is
+/// drawn with ``FlatProjection`` and moved back by its radius, so the front view keeps its own
+/// size and the others get smaller toward the back.
 ///
 /// ```swift
 /// struct Destinations: View {
@@ -65,7 +69,8 @@ public struct SpatialCarousel<Data: RandomAccessCollection, ID: Hashable, Conten
 
     public var body: some View {
         let items = data.prefix(SpatialLayoutLimits.maximumItemCount).enumerated().map { Item(index: $0.offset, element: $0.element) }
-        SpatialLayoutView(RingLayout(radius: radius, rotation: rotation), items, id: (\Item.element).appending(path: id), projection: projection) { item in
+        let ring = RingLayout(radius: radius, rotation: rotation).offset([0, 0, depthOffset])
+        SpatialLayoutView(ring, items, id: (\Item.element).appending(path: id), projection: projection) { item in
             content(item.element)
                 .onTapGesture { turn(to: item.index) }
         }
@@ -99,11 +104,30 @@ public struct SpatialCarousel<Data: RandomAccessCollection, ID: Hashable, Conten
             }
     }
 
+    /// How far the ring is moved toward the viewer, in meters.
+    ///
+    /// On iOS and macOS the ring's center sits a radius behind the carousel, so the front view is
+    /// in the carousel's plane and drawn at its own size. A visionOS window shows nothing behind
+    /// its plane, so there the ring stays centered: the views at the sides remain visible and the
+    /// front view comes forward by the radius.
+    private var depthOffset: Float {
+        #if os(visionOS)
+        0
+        #else
+        -ringRadius
+        #endif
+    }
+
+    /// The radius the ring layout uses after its own correction.
+    private var ringRadius: Float {
+        SpatialLayoutLimits.clampedLength(radius, fallback: 0)
+    }
+
     private var radiusInPoints: CGFloat {
         #if os(visionOS)
-        CGFloat(radius) * physicalMetrics.convert(1, from: .meters)
+        CGFloat(ringRadius) * physicalMetrics.convert(1, from: .meters)
         #else
-        CGFloat(radius) * SpatialUnits.pointsPerMeter(projection.pointsPerMeter)
+        CGFloat(ringRadius) * SpatialUnits.pointsPerMeter(projection.pointsPerMeter)
         #endif
     }
 

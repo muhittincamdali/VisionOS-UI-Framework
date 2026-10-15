@@ -58,6 +58,9 @@ struct RenderTests {
         }
         let pixels = try Pixels(view, width: 400, height: 120)
         #expect(pixels[200, 60].isClose(to: .blue))
+        // The front item is in the carousel's plane, so it keeps its 40-point size.
+        #expect(pixels[182, 60].isClose(to: .blue))
+        #expect(pixels[177, 60] == .white)
     }
 
     @Test("spatialHitTarget keeps the view's layout size")
