@@ -143,7 +143,7 @@ public struct SpatialCarousel<Data: RandomAccessCollection, ID: Hashable, Conten
     ///
     /// The front of the ring follows the finger: a drag the length of the radius turns the ring
     /// by one radian. A radius that is not positive, or values that are not finite, leave `start`.
-    static func rotation(from start: Float, dragged distance: CGFloat, radiusInPoints: CGFloat) -> Float {
+    nonisolated static func rotation(from start: Float, dragged distance: CGFloat, radiusInPoints: CGFloat) -> Float {
         guard start.isFinite, distance.isFinite, radiusInPoints.isFinite, radiusInPoints > 1e-3 else {
             return start.isFinite ? start : 0
         }
@@ -160,13 +160,13 @@ public struct SpatialCarousel<Data: RandomAccessCollection, ID: Hashable, Conten
     ///
     /// The index is wrapped before the step, so `Int.max` steps to a valid index instead of
     /// overflowing.
-    static func stepped(_ index: Int, by delta: Int, count: Int) -> Int {
+    nonisolated static func stepped(_ index: Int, by delta: Int, count: Int) -> Int {
         guard count > 0 else { return 0 }
         return wrapped(wrapped(index, count: count) + wrapped(delta, count: count), count: count)
     }
 
     /// `index` wrapped into `0..<count`; `0` when the count is zero or less.
-    static func wrapped(_ index: Int, count: Int) -> Int {
+    nonisolated static func wrapped(_ index: Int, count: Int) -> Int {
         guard count > 0 else { return 0 }
         let remainder = index % count
         return remainder < 0 ? remainder + count : remainder

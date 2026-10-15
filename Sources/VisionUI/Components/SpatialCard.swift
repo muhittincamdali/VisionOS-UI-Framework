@@ -96,11 +96,11 @@ public extension View {
 
 struct SpatialDepthModifier: ViewModifier {
     /// The largest depth the modifier applies, in points.
-    static let maximumDepth: CGFloat = 1_000
+    nonisolated static let maximumDepth: CGFloat = 1_000
 
     let depth: CGFloat
 
-    static func sanitized(_ depth: CGFloat) -> CGFloat {
+    nonisolated static func sanitized(_ depth: CGFloat) -> CGFloat {
         min(HitTarget.sanitized(depth), maximumDepth)
     }
 
