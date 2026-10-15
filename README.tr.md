@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@a607cdedad0ba713bf27fccccb58208ca691502a status=reviewed -->
+<!-- i18n-source: README.md@608280ce28466a834e3e8a4214b5f85aae8f74ea status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-tr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-tr-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-tr-light.svg" alt="VisionOS UI Framework: visionOS uygulamaları için uzamsal yerleşimler, döner galeri, sürükleyici alanlar ve sınırlı nesne hareketi."></picture></p>
@@ -35,7 +35,7 @@ visionOS uygulamaları için bir Swift paketi: SwiftUI görünümlerini ve Reali
 - **Sınırlar içinde manipülasyon** — `ManipulationState`, sürüklenen, tutam hareketiyle büyütülen veya döndürülen bir nesneyi bir kutunun ve bir ölçek aralığının içinde tutar; isterseniz dik duruşu korur, yakalama (snapping) uygular ve hatalı hareket değerlerini yok sayar.
 - **Platforma göre boyutlanan bileşenler** — `SpatialCard`, visionOS'ta ornament'e dönüşen bir araç çubuğu ve Apple'ın yönergelerine göre boyutlandırılmış dokunma hedefleri (visionOS'ta 60 pt, iOS'ta 44, macOS'ta 28).
 - **Güvenilmeyen girdi güvenlidir** — sayılar 4096 öğeyle, uzunluklar 10 km ile sınırlıdır; NaN veya sonsuz argümanlar belgelenmiş varsayılanlara döner. Böylece bir dosyadan okunan değer belleği tüketemez veya sonsuz bir konum üretemez.
-- **Üç platformda test edildi** — 94 Swift Testing testi macOS'ta ve bir iPhone simülatöründe çalışır; piksel testleri dışındaki 84'ü bir visionOS simülatöründe de çalışır.
+- **Üç platformda test edildi** — 97 Swift Testing testi macOS'ta ve bir iPhone simülatöründe çalışır; piksel testleri dışındaki 87'si bir visionOS simülatöründe de çalışır.
 
 ### Neler var
 

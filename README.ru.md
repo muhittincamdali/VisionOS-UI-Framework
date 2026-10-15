@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@a607cdedad0ba713bf27fccccb58208ca691502a status=reviewed -->
+<!-- i18n-source: README.md@608280ce28466a834e3e8a4214b5f85aae8f74ea status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-ru-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-ru-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-ru-light.svg" alt="VisionOS UI Framework: Раскладки в 3D, карусель, иммерсивные пространства и ограниченные манипуляции для visionOS."></picture></p>
@@ -35,7 +35,7 @@
 - **Манипуляции в пределах ограничений** — `ManipulationState` удерживает перетаскиваемый, масштабируемый щипком или поворачиваемый объект внутри коробки и диапазона масштаба, при желании в вертикальном положении, с привязкой (snapping), и игнорирует ошибочные значения жестов.
 - **Компоненты нужного размера для каждой платформы** — `SpatialCard`, панель инструментов, которая в visionOS становится ornament, и области нажатия с размерами по рекомендациям Apple (60 pt в visionOS, 44 в iOS, 28 в macOS).
 - **Ненадёжный ввод безопасен** — количество ограничено 4096 элементами, длины — 10 км, а аргументы NaN или бесконечные возвращаются к задокументированным значениям по умолчанию, поэтому значение, прочитанное из файла, не может исчерпать память или дать бесконечную позицию.
-- **Проверено на трёх платформах** — 94 теста Swift Testing запускаются на macOS и в симуляторе iPhone; 84 из них, все кроме пиксельных тестов, запускаются и в симуляторе visionOS.
+- **Проверено на трёх платформах** — 97 тестов Swift Testing запускаются на macOS и в симуляторе iPhone; 87 из них, все кроме пиксельных тестов, запускаются и в симуляторе visionOS.
 
 ### Что входит
 
