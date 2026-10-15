@@ -66,15 +66,19 @@ struct RenderTests {
 
     @Test("a custom layout with broken placements still draws its views at finite positions")
     func brokenPlacements() throws {
-        struct NaNLayout: SpatialLayout {
+        struct BrokenLayout: SpatialLayout {
             func placements(count: Int) -> [SpatialPlacement] {
-                Array(repeating: SpatialPlacement(position: [.nan, .nan, .nan], orientation: simd_quatf(vector: [.nan, .nan, .nan, .nan])), count: max(count, 0))
+                let placement = SpatialPlacement(position: [.nan, 0.025, 0], orientation: simd_quatf(vector: [.infinity, 0, 0, 1]))
+                return Array(repeating: placement, count: max(count, 0))
             }
         }
-        let view = SpatialLayoutView(NaNLayout(), primaries.prefix(1)) { item in swatch(item.color) }
-        let pixels = try Pixels(view, width: 60, height: 60)
-        // The NaN position becomes the origin, so the swatch is drawn in the middle.
-        #expect(pixels[30, 30].isClose(to: .red))
+        let view = SpatialLayoutView(BrokenLayout(), primaries.prefix(1)) { item in swatch(item.color) }
+        let pixels = try Pixels(view, width: 60, height: 120)
+        // Only the NaN coordinate becomes 0; the valid y keeps the swatch 25 points above the
+        // center. Without sanitizing, the flat projection would drop the whole position and draw
+        // the swatch in the middle. The infinite orientation becomes no rotation.
+        #expect(pixels[30, 35].isClose(to: .red))
+        #expect(pixels[30, 60] == .white)
     }
 
     @Test("spatialHitTarget keeps the view's layout size")
