@@ -4,9 +4,14 @@ import simd
 /// Converts between the package's meters (`+y` up) and SwiftUI's points (`+y` down).
 enum SpatialUnits {
     static let defaultPointsPerMeter: CGFloat = 1000
+    /// One point per micrometer. With positions of up to ±``SpatialLayoutLimits/maximumLength``
+    /// this keeps offsets within ±1e10 points, far from overflowing.
+    static let maximumPointsPerMeter: CGFloat = 1_000_000
 
+    /// `value` when it is positive and finite, at most ``maximumPointsPerMeter``; otherwise
+    /// ``defaultPointsPerMeter``.
     static func pointsPerMeter(_ value: CGFloat) -> CGFloat {
-        value.isFinite && value > 0 ? value : defaultPointsPerMeter
+        value.isFinite && value > 0 ? min(value, maximumPointsPerMeter) : defaultPointsPerMeter
     }
 
     /// A translation in SwiftUI points, `+y` down, as meters with `+y` up.

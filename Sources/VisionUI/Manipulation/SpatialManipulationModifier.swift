@@ -27,7 +27,8 @@ public extension View {
     /// - Parameters:
     ///   - state: The position, scale and orientation, with their constraints.
     ///   - pointsPerMeter: On iOS and macOS, how many points on screen stand for one meter. Ignored
-    ///     on visionOS. Values that are not positive and finite are replaced by `1000`.
+    ///     on visionOS. Values that are not positive and finite are replaced by `1000`, and values
+    ///     above `1_000_000` by `1_000_000`.
     func spatialManipulation(_ state: Binding<ManipulationState>, pointsPerMeter: CGFloat = 1000) -> some View {
         modifier(SpatialManipulationModifier(state: state, pointsPerMeter: pointsPerMeter))
     }

@@ -21,7 +21,7 @@ public struct FlatProjection: Sendable, Equatable {
     ///
     /// - Parameters:
     ///   - pointsPerMeter: How many points stand for one meter. Values that are not positive and
-    ///     finite become `1000`.
+    ///     finite become `1000`, and values above `1_000_000` become `1_000_000`.
     ///   - viewerDistance: The distance from the viewer to the origin, in meters. Values that are
     ///     not positive and finite become `1.5`.
     public init(pointsPerMeter: CGFloat = 1000, viewerDistance: Float = 1.5) {

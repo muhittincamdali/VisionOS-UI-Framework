@@ -44,6 +44,17 @@ struct FlatProjectionTests {
         #expect(far.offset.width.isFinite && far.offset.height.isFinite)
     }
 
+    @Test("a huge points-per-meter value is capped, so offsets stay finite")
+    func hugeScale() {
+        // Without the cap the offset limit, 10 km times the scale, overflowed to infinity.
+        let projection = FlatProjection(pointsPerMeter: .greatestFiniteMagnitude)
+        #expect(projection.project(SpatialPlacement(position: [1, -2, 0])).offset == CGSize(width: 1_000_000, height: 2_000_000))
+        let far = projection.project(SpatialPlacement(position: [.greatestFiniteMagnitude, 0, 0]))
+        #expect(far.offset == CGSize(width: 1e10, height: 0))
+        #expect(SpatialUnits.pointsPerMeter(5_000_000) == SpatialUnits.maximumPointsPerMeter)
+        #expect(SpatialUnits.pointsPerMeter(250) == 250)
+    }
+
     @Test("the yaw comes from the placement's orientation")
     func yaw() {
         let projected = FlatProjection().project(SpatialPlacement(position: .zero, orientation: SpatialMath.yawRotation(0.5)))
