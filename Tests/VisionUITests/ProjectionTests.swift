@@ -74,9 +74,12 @@ struct CarouselTests {
     func stepping() {
         #expect(Carousel.stepped(4, by: 1, count: 5) == 0)
         #expect(Carousel.stepped(0, by: -1, count: 5) == 4)
-        #expect(Carousel.stepped(Int.max, by: 1, count: 5) == (Carousel.wrapped(Int.max, count: 5) + 1) % 5)
-        #expect(Carousel.stepped(Int.min, by: -1, count: 5) == (Carousel.wrapped(Int.min, count: 5) + 4) % 5)
-        #expect(Carousel.stepped(2, by: Int.min, count: 5) == Carousel.wrapped(2 + Carousel.wrapped(Int.min, count: 5), count: 5))
+        // Int.max = 9223372036854775807 is 2 modulo 5, and Int.min = -9223372036854775808 is 2 too
+        // (-3 + 5), so these expected values do not depend on `wrapped(_:count:)`.
+        #expect(Carousel.stepped(Int.max, by: 1, count: 5) == 3)
+        #expect(Carousel.stepped(Int.min, by: -1, count: 5) == 1)
+        #expect(Carousel.stepped(2, by: Int.min, count: 5) == 4)
+        #expect(Carousel.stepped(Int.max, by: Int.max, count: 5) == 4)
         #expect(Carousel.stepped(3, by: 1, count: 0) == 0)
     }
 
@@ -84,7 +87,8 @@ struct CarouselTests {
     func wrapping() {
         #expect(Carousel.wrapped(7, count: 5) == 2)
         #expect(Carousel.wrapped(-1, count: 5) == 4)
-        #expect(Carousel.wrapped(Int.min, count: 5) == ((Int.min % 5) + 5) % 5)
+        #expect(Carousel.wrapped(Int.max, count: 5) == 2)
+        #expect(Carousel.wrapped(Int.min, count: 5) == 2)
         #expect(Carousel.wrapped(3, count: 0) == 0)
     }
 }
