@@ -29,7 +29,7 @@ public struct SpatialCard<Content: View>: View {
     ///   - padding: The space between the edge and the content, in points. Negative or non-finite
     ///     values become `0`.
     ///   - depth: How far in front of its parent the card sits, in points. See
-    ///     ``View/spatialDepth(_:)``.
+    ///     ``SwiftUICore/View/spatialDepth(_:)``.
     ///   - liftsOnHover: Whether the card lifts when a person looks at it or points at it.
     ///   - content: The card's content.
     public init(

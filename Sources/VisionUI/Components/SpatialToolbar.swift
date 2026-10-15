@@ -4,7 +4,7 @@ import SwiftUI
 /// visionOS, a material with 44- or 28-point targets on iOS and macOS.
 ///
 /// Use it on its own, or attach it to the edge of a window with
-/// ``View/toolbarOrnament(edge:content:)``.
+/// ``SwiftUICore/View/toolbarOrnament(edge:content:)``.
 ///
 /// ```swift
 /// SpatialToolbar {

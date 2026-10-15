@@ -4,7 +4,7 @@ import SwiftUI
 ///
 /// Apple's Human Interface Guidelines give a default control size of 60 × 60 points on
 /// visionOS, where people aim with their eyes, 44 × 44 points on iOS and 28 × 28 points on macOS.
-/// ``View/spatialHitTarget(minimum:)`` grows a smaller view's tappable area to that size without
+/// ``SwiftUICore/View/spatialHitTarget(minimum:)`` grows a smaller view's tappable area to that size without
 /// changing how it looks.
 public enum HitTarget {
     /// The default control size on visionOS, in points.
