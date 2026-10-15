@@ -16,7 +16,8 @@ public struct ManipulationConstraints: Sendable, Equatable {
     /// The default scale range.
     public static let defaultScaleRange: ClosedRange<Float> = 0.25...4
 
-    /// The box the object's position stays in, or `nil` for no limit.
+    /// The box the object's position stays in, or `nil` for no box. Without a box the position
+    /// still stays within ±``SpatialLayoutLimits/maximumLength`` on each axis.
     public var bounds: SpatialBounds?
     /// The smallest and largest scale. Always positive and finite.
     public private(set) var scaleRange: ClosedRange<Float>
@@ -29,7 +30,8 @@ public struct ManipulationConstraints: Sendable, Equatable {
     /// Creates constraints.
     ///
     /// - Parameters:
-    ///   - bounds: The box the position stays in, or `nil` for no limit.
+    ///   - bounds: The box the position stays in, or `nil` for no box (the position then stays
+    ///     within ±``SpatialLayoutLimits/maximumLength``).
     ///   - scaleRange: The smallest and largest scale. Bounds that are not positive and finite are
     ///     replaced: a lower bound with `0.01` and an upper bound with `100`.
     ///   - rotation: How the object may turn.
@@ -76,9 +78,11 @@ public struct ManipulationConstraints: Sendable, Equatable {
 /// ```
 ///
 /// Values that are NaN or infinite, a non-positive magnification and a zero rotation are
-/// ignored, so a glitch in a gesture never moves an object out of reach.
+/// ignored, and a position never leaves ±``SpatialLayoutLimits/maximumLength`` on any axis, so a
+/// glitch in a gesture never moves an object out of reach and the position is always finite.
 public struct ManipulationState: Sendable, Equatable {
-    /// The object's position, in meters, inside the constraints' bounds.
+    /// The object's position, in meters, inside the constraints' bounds, or within
+    /// ±``SpatialLayoutLimits/maximumLength`` when there are none.
     public private(set) var position: SIMD3<Float>
     /// The object's uniform scale, inside the constraints' scale range.
     public private(set) var scale: Float
@@ -194,9 +198,15 @@ public struct ManipulationState: Sendable, Equatable {
 
     // MARK: Constraints
 
+    /// The box for constraints without bounds. Its corners are clamped to
+    /// ±``SpatialLayoutLimits/maximumLength``, so repeated large drags cannot add up to infinity.
+    private static let unboundedBox = SpatialBounds(
+        min: SIMD3<Float>(repeating: -.infinity),
+        max: SIMD3<Float>(repeating: .infinity)
+    )
+
     private func constrained(_ position: SIMD3<Float>) -> SIMD3<Float> {
-        guard let bounds = constraints.bounds else { return position }
-        return bounds.clamp(position)
+        (constraints.bounds ?? Self.unboundedBox).clamp(position)
     }
 
     private func constrained(_ scale: Float) -> Float {

@@ -95,6 +95,21 @@ struct ManipulationStateTests {
         #expect(unbounded.scale == 100)
     }
 
+    @Test("without bounds the position stays within the length limit")
+    func unboundedPosition() {
+        let limit = SpatialLayoutLimits.maximumLength
+        // Without the limit, moving to 3e38 and then dragging by 3e38 added up to infinity.
+        var state = ManipulationState()
+        state.move(to: [3e38, 0, 0])
+        #expect(state.position == [limit, 0, 0])
+        state.drag(translation: [3e38, -3e38, 0])
+        #expect(state.position == [limit, -limit, 0])
+        state.endDrag()
+        state.drag(translation: [-3e38, 0, 0])
+        #expect(state.position == [-limit, -limit, 0])
+        #expect(ManipulationState(position: [1e30, -1e30, 5]).position == [limit, -limit, 5])
+    }
+
     @Test("yaw-only rotation drops tilt and snaps when it ends")
     func yawOnly() {
         var state = ManipulationState(constraints: .init(rotation: .yaw, yawSnapAngle: .pi / 4))

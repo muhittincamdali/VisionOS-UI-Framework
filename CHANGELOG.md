@@ -39,6 +39,7 @@ version.
 - `ManipulationState`, `ManipulationConstraints`, `SpatialBounds` and
   `spatialManipulation(_:pointsPerMeter:)`: drag, pinch and rotation within bounds and a scale
   range, free, upright or locked rotation, yaw snapping, and one starting value per gesture.
+  Without bounds, positions stay within ±10 km on each axis.
 - `SpatialCard`, `SpatialToolbar`, `SpatialToolbarButtonStyle`, `toolbarOrnament(edge:content:)`,
   `spatialHitTarget(minimum:)`, `spatialDepth(_:)` and `HitTarget` with the default control
   sizes from Apple's Human Interface Guidelines.
