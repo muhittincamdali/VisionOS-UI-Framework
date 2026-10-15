@@ -1,0 +1,1 @@
+../../Examples/SpatialGallery/SpatialGallery/ReadmeSamples.swift
