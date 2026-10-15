@@ -28,13 +28,17 @@ public enum HitTarget {
     /// The padding on each side that grows a view of `size` to at least `minimum` on both axes.
     ///
     /// Sides that are already large enough get no padding. Values that are negative, NaN or
-    /// infinite count as zero.
+    /// infinite count as zero, and minimums above 10,000 points count as 10,000.
     public static func padding(toGrow size: CGSize, to minimum: CGFloat) -> EdgeInsets {
-        let minimum = sanitized(minimum)
+        let minimum = min(sanitized(minimum), largestMinimum)
         let horizontal = max(minimum - sanitized(size.width), 0) / 2
         let vertical = max(minimum - sanitized(size.height), 0) / 2
         return EdgeInsets(top: vertical, leading: horizontal, bottom: vertical, trailing: horizontal)
     }
+
+    /// The largest minimum ``padding(toGrow:to:)`` grows a view to, in points. Far beyond any
+    /// screen or window, and small enough that the padding stays a usable layout value.
+    static let largestMinimum: CGFloat = 10_000
 
     static func sanitized(_ value: CGFloat) -> CGFloat {
         value.isFinite && value > 0 ? value : 0
@@ -55,7 +59,8 @@ public extension View {
     /// they are about to select.
     ///
     /// - Parameter minimum: The smallest width and height of the tappable area, in points. The
-    ///   default is the platform's default control size from ``HitTarget``.
+    ///   default is the platform's default control size from ``HitTarget``. Values above 10,000
+    ///   count as 10,000.
     func spatialHitTarget(minimum: CGFloat = HitTarget.platformDefault) -> some View {
         modifier(HitTargetModifier(minimum: minimum))
     }

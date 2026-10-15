@@ -26,6 +26,14 @@ struct HitTargetTests {
         }
     }
 
+    @Test("huge minimums are capped at 10,000 points")
+    func hugeMinimum() {
+        // Without the cap, .greatestFiniteMagnitude gave about 9e307 points of padding.
+        let side = HitTarget.largestMinimum / 2
+        #expect(HitTarget.padding(toGrow: .zero, to: .greatestFiniteMagnitude) == EdgeInsets(top: side, leading: side, bottom: side, trailing: side))
+        #expect(HitTarget.padding(toGrow: CGSize(width: 9_000, height: 20_000), to: 50_000) == EdgeInsets(top: 0, leading: 500, bottom: 0, trailing: 500))
+    }
+
     @Test("the platform default follows Apple's guidelines")
     func platformDefault() {
         #if os(macOS)
