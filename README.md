@@ -47,8 +47,8 @@ macOS, where layouts are drawn as seen from the front, and the package has no de
 - **Untrusted input is safe** — counts are capped at 4096 items, lengths at 10 km, and NaN or
   infinite arguments fall back to documented defaults, so a value read from a file cannot
   exhaust memory or produce an infinite position.
-- **Tested on three platforms** — 93 Swift Testing tests run on macOS and on an iPhone
-  simulator; 83 of them, all but the pixel tests, also run on a visionOS simulator.
+- **Tested on three platforms** — 94 Swift Testing tests run on macOS and on an iPhone
+  simulator; 84 of them, all but the pixel tests, also run on a visionOS simulator.
 
 ### What's included
 

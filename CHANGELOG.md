@@ -47,7 +47,7 @@ version.
   and rows before they are multiplied, NaN or infinite values fall back to documented
   defaults or are ignored, and placements from custom layouts are made finite before they reach
   views or entities.
-- 93 Swift Testing tests that run on macOS and on an iPhone simulator, 83 of which also run on a
+- 94 Swift Testing tests that run on macOS and on an iPhone simulator, 84 of which also run on a
   visionOS simulator: geometry of every layout, hostile arguments, the coordinator's cases with a
   fake system, the manipulation state, RealityKit arrangement, and pixels of rendered views.
 - DocC catalog with four articles (Getting Started, Arranging Content in Space, Managing

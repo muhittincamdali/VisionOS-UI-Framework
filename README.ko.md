@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@adba62b2218f692b4b6f70e419f8698ca3ff00cd status=reviewed -->
+<!-- i18n-source: README.md@a607cdedad0ba713bf27fccccb58208ca691502a status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-ko-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-ko-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-ko-light.svg" alt="VisionOS UI Framework: visionOS 앱을 위한 공간 레이아웃, 캐러셀, 몰입형 공간, 제한된 조작."></picture></p>
@@ -35,7 +35,7 @@ visionOS 앱을 위한 Swift 패키지입니다. 다섯 가지 레이아웃(아�
 - **한도 안에서의 조작** — `ManipulationState`는 드래그, 핀치, 회전한 객체를 상자와 배율 범위 안에 유지하고, 원하면 똑바로 선 상태를 지키며, 스냅을 적용하고, 오작동한 제스처 값은 무시합니다.
 - **플랫폼에 맞는 크기의 구성 요소** — `SpatialCard`, visionOS에서 ornament가 되는 툴바, Apple 가이드라인에 맞춘 히트 타깃 크기(visionOS 60 pt, iOS 44, macOS 28)를 제공합니다.
 - **신뢰할 수 없는 입력도 안전** — 개수는 4096개, 길이는 10 km로 제한되며, NaN이나 무한대 인자는 문서에 적힌 기본값으로 대체됩니다. 그래서 파일에서 읽은 값이 메모리를 소진시키거나 무한히 먼 위치를 만들 수 없습니다.
-- **세 플랫폼에서 테스트** — Swift Testing 테스트 93개가 macOS와 iPhone 시뮬레이터에서 실행되고, 그중 픽셀 테스트를 제외한 83개는 visionOS 시뮬레이터에서도 실행됩니다.
+- **세 플랫폼에서 테스트** — Swift Testing 테스트 94개가 macOS와 iPhone 시뮬레이터에서 실행되고, 그중 픽셀 테스트를 제외한 84개는 visionOS 시뮬레이터에서도 실행됩니다.
 
 ### 포함된 내용
 

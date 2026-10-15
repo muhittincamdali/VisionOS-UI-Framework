@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@adba62b2218f692b4b6f70e419f8698ca3ff00cd status=reviewed -->
+<!-- i18n-source: README.md@a607cdedad0ba713bf27fccccb58208ca691502a status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-de-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-de-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-de-light.svg" alt="VisionOS UI Framework: Räumliche Layouts, Karussell, immersive Räume und begrenzte Manipulation für visionOS-Apps."></picture></p>
@@ -35,7 +35,7 @@ Ein Swift-Paket für visionOS-Apps: Es platziert SwiftUI-Views und RealityKit-En
 - **Manipulation innerhalb von Grenzen** — `ManipulationState` hält ein gezogenes, per Pinch-Geste skaliertes oder gedrehtes Objekt innerhalb einer Box und eines Skalierungsbereichs, auf Wunsch aufrecht und mit Einrasten (Snapping), und ignoriert fehlerhafte Gestenwerte.
 - **Komponenten in plattformgerechter Größe** — `SpatialCard`, eine Toolbar, die unter visionOS zum Ornament wird, und Trefferflächen in der Größe, die Apples Richtlinien vorgeben (60 pt unter visionOS, 44 unter iOS, 28 unter macOS).
 - **Nicht vertrauenswürdige Eingaben sind unbedenklich** — Anzahlen sind auf 4096 Elemente und Längen auf 10 km begrenzt, und NaN oder unendliche Argumente fallen auf dokumentierte Standardwerte zurück. So kann ein aus einer Datei gelesener Wert weder den Speicher aufbrauchen noch eine unendliche Position erzeugen.
-- **Auf drei Plattformen getestet** — 93 Swift-Testing-Tests laufen unter macOS und auf einem iPhone-Simulator; 83 davon, alle außer den Pixeltests, laufen auch auf einem visionOS-Simulator.
+- **Auf drei Plattformen getestet** — 94 Swift-Testing-Tests laufen unter macOS und auf einem iPhone-Simulator; 84 davon, alle außer den Pixeltests, laufen auch auf einem visionOS-Simulator.
 
 ### Was enthalten ist
 

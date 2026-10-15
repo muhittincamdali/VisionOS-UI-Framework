@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@adba62b2218f692b4b6f70e419f8698ca3ff00cd status=reviewed -->
+<!-- i18n-source: README.md@a607cdedad0ba713bf27fccccb58208ca691502a status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-zh-CN-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-zh-CN-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-zh-CN-light.svg" alt="VisionOS UI Framework: 适用于 visionOS 应用的空间布局、轮播、沉浸式空间和受限操控。"></picture></p>
@@ -35,7 +35,7 @@
 - **有限制的操控** — `ManipulationState` 让被拖动、捏合或旋转的对象保持在指定的盒形范围和缩放区间内，可选择保持直立，支持吸附，并忽略异常的手势数值。
 - **按平台调整尺寸的组件** — `SpatialCard`、在 visionOS 上变为 ornament 的工具栏，以及按 Apple 指南设定尺寸的点击目标（visionOS 为 60 pt，iOS 为 44，macOS 为 28）。
 - **不受信任的输入也是安全的** — 数量上限为 4096 项，长度上限为 10 km，NaN 或无穷大的参数会回退到文档中说明的默认值，因此从文件读取的数值不会耗尽内存，也不会产生无限远的位置。
-- **在三个平台上测试** — 93 个 Swift Testing 测试在 macOS 和 iPhone 模拟器上运行；除像素测试外的 83 个也在 visionOS 模拟器上运行。
+- **在三个平台上测试** — 94 个 Swift Testing 测试在 macOS 和 iPhone 模拟器上运行；除像素测试外的 84 个也在 visionOS 模拟器上运行。
 
 ### 包含内容
 

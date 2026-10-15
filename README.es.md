@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@adba62b2218f692b4b6f70e419f8698ca3ff00cd status=reviewed -->
+<!-- i18n-source: README.md@a607cdedad0ba713bf27fccccb58208ca691502a status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-es-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-es-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-es-light.svg" alt="VisionOS UI Framework: Diseños espaciales, carrusel, espacios inmersivos y manipulación con límites para apps de visionOS."></picture></p>
@@ -35,7 +35,7 @@ Un paquete de Swift para apps de visionOS: coloca vistas de SwiftUI y entidades 
 - **Manipulación dentro de límites** — `ManipulationState` mantiene un objeto arrastrado, pellizcado o girado dentro de una caja y de un rango de escala, en posición vertical si lo quieres, con ajuste automático (snapping), e ignora los valores erróneos de los gestos.
 - **Componentes con el tamaño adecuado para cada plataforma** — `SpatialCard`, una barra de herramientas que se convierte en ornament en visionOS y áreas de toque con el tamaño que indican las guías de Apple (60 pt en visionOS, 44 en iOS, 28 en macOS).
 - **Las entradas no confiables son seguras** — las cantidades se limitan a 4096 elementos y las longitudes a 10 km, y los argumentos NaN o infinitos recuperan valores predeterminados documentados, de modo que un valor leído de un archivo no puede agotar la memoria ni producir una posición infinita.
-- **Probado en tres plataformas** — 93 pruebas de Swift Testing se ejecutan en macOS y en un simulador de iPhone; 83 de ellas, todas menos las pruebas de píxeles, también se ejecutan en un simulador de visionOS.
+- **Probado en tres plataformas** — 94 pruebas de Swift Testing se ejecutan en macOS y en un simulador de iPhone; 84 de ellas, todas menos las pruebas de píxeles, también se ejecutan en un simulador de visionOS.
 
 ### Qué incluye
 

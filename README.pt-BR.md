@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@adba62b2218f692b4b6f70e419f8698ca3ff00cd status=reviewed -->
+<!-- i18n-source: README.md@a607cdedad0ba713bf27fccccb58208ca691502a status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-pt-BR-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-pt-BR-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/VisionOS-UI-Framework/main/.github/brand/banner-pt-BR-light.svg" alt="VisionOS UI Framework: Layouts espaciais, carrossel, espaços imersivos e manipulação com limites para apps visionOS."></picture></p>
@@ -35,7 +35,7 @@ Um pacote Swift para apps visionOS: ele posiciona views do SwiftUI e entidades d
 - **Manipulação dentro de limites** — `ManipulationState` mantém um objeto arrastado, pinçado ou girado dentro de uma caixa e de uma faixa de escala, na vertical se você quiser, com encaixe (snapping), e ignora valores de gesto com defeito.
 - **Componentes no tamanho de cada plataforma** — `SpatialCard`, uma barra de ferramentas que vira ornament no visionOS e áreas de toque no tamanho indicado pelas diretrizes da Apple (60 pt no visionOS, 44 no iOS, 28 no macOS).
 - **Entrada não confiável é segura** — as quantidades são limitadas a 4096 itens e os comprimentos a 10 km, e argumentos NaN ou infinitos voltam a valores padrão documentados, de modo que um valor lido de um arquivo não consegue esgotar a memória nem produzir uma posição infinita.
-- **Testado em três plataformas** — 93 testes do Swift Testing rodam no macOS e em um simulador de iPhone; 83 deles, todos menos os testes de pixels, também rodam em um simulador de visionOS.
+- **Testado em três plataformas** — 94 testes do Swift Testing rodam no macOS e em um simulador de iPhone; 84 deles, todos menos os testes de pixels, também rodam em um simulador de visionOS.
 
 ### O que está incluído
 
