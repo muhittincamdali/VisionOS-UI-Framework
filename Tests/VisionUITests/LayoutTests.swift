@@ -290,6 +290,27 @@ struct LayoutLimitTests {
         }
     }
 
+    @Test("offset moves every placement and keeps the orientations")
+    func offsetLayout() {
+        let ring = RingLayout(radius: 0.3)
+        let moved = ring.offset([0, 0, -0.3]).placements(count: 4)
+        #expect(isClose(moved[0].position, .zero))
+        for (original, shifted) in zip(ring.placements(count: 4), moved) {
+            #expect(isClose(shifted.position - original.position, [0, 0, -0.3]))
+            #expect(shifted.orientation == original.orientation)
+        }
+        #expect(ring.offset([1, 2, 3]) == OffsetLayout(base: ring, translation: [1, 2, 3]))
+    }
+
+    @Test("a broken offset is ignored or limited")
+    func hostileOffset() {
+        let grid = GridLayout(columns: 1, rows: 1)
+        #expect(grid.offset([.nan, 0, 0]).placements(count: 1)[0].position == .zero)
+        #expect(grid.offset([.infinity, 0, 0]).placements(count: 1)[0].position == .zero)
+        let far = grid.offset([1e30, -1e30, 0]).placements(count: 1)[0].position
+        #expect(far == [SpatialLayoutLimits.maximumLength, -SpatialLayoutLimits.maximumLength, 0])
+    }
+
     @Test("static shorthands build the same layouts")
     func shorthands() {
         #expect(ArcLayout.arc(radius: 2, spacing: 0.1) == ArcLayout(radius: 2, spacing: 0.1))

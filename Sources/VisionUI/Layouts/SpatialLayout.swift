@@ -131,3 +131,37 @@ public extension SpatialLayout where Self == HelixLayout {
         HelixLayout(radius: radius, rise: rise, itemsPerTurn: itemsPerTurn, facing: facing)
     }
 }
+
+/// A layout moved by a fixed translation. Create it with ``SpatialLayout/offset(_:)``.
+public struct OffsetLayout<Base: SpatialLayout>: SpatialLayout {
+    /// The layout that is moved.
+    public var base: Base
+    /// The translation added to every position, in meters.
+    public var translation: SIMD3<Float>
+
+    public func placements(count: Int) -> [SpatialPlacement] {
+        // A translation that is not finite is ignored; huge ones are limited like layout lengths.
+        let limit = SIMD3<Float>(repeating: SpatialLayoutLimits.maximumLength)
+        let translation = simd_clamp(SpatialMath.finite(translation, or: .zero), -limit, limit)
+        return base.placements(count: count).map { placement in
+            SpatialPlacement(position: placement.position + translation, orientation: placement.orientation)
+        }
+    }
+}
+
+extension OffsetLayout: Equatable where Base: Equatable {}
+
+public extension SpatialLayout {
+    /// The same layout, moved by `translation` meters.
+    ///
+    /// ```swift
+    /// // A ring whose front item sits at the origin instead of its center.
+    /// let carousel = RingLayout(radius: 0.3).offset([0, 0, -0.3])
+    /// ```
+    ///
+    /// A translation with a NaN or infinite component is ignored, and components are limited to
+    /// ±``SpatialLayoutLimits/maximumLength``.
+    func offset(_ translation: SIMD3<Float>) -> OffsetLayout<Self> {
+        OffsetLayout(base: self, translation: translation)
+    }
+}
