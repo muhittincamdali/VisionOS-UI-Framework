@@ -35,4 +35,20 @@ public struct SpatialPlacement: Sendable, Equatable {
     public var yaw: Float {
         SpatialMath.yaw(of: forward)
     }
+
+    /// The placement with a finite position within ±``SpatialLayoutLimits/maximumLength`` on each
+    /// axis and a unit orientation.
+    ///
+    /// NaN coordinates become `0`, and an orientation that is not finite or has no length becomes
+    /// no rotation. Views and entities are placed with this value, so a custom ``SpatialLayout``
+    /// that returns a broken placement cannot move them to an infinite position.
+    public var sanitized: SpatialPlacement {
+        let limit = SIMD3<Float>(repeating: SpatialLayoutLimits.maximumLength)
+        let position = simd_clamp(self.position.replacing(with: 0, where: self.position .!= self.position), -limit, limit)
+        let vector = orientation.vector
+        let length = simd_length(vector)
+        let isValid = vector.x.isFinite && vector.y.isFinite && vector.z.isFinite && vector.w.isFinite
+            && length.isFinite && length > 1e-6
+        return SpatialPlacement(position: position, orientation: isValid ? simd_quatf(vector: vector / length) : SpatialMath.identity)
+    }
 }

@@ -1,5 +1,6 @@
 #if !os(visionOS)
 import SwiftUI
+import simd
 import Testing
 @testable import VisionUI
 
@@ -61,6 +62,19 @@ struct RenderTests {
         // The front item is in the carousel's plane, so it keeps its 40-point size.
         #expect(pixels[182, 60].isClose(to: .blue))
         #expect(pixels[177, 60] == .white)
+    }
+
+    @Test("a custom layout with broken placements still draws its views at finite positions")
+    func brokenPlacements() throws {
+        struct NaNLayout: SpatialLayout {
+            func placements(count: Int) -> [SpatialPlacement] {
+                Array(repeating: SpatialPlacement(position: [.nan, .nan, .nan], orientation: simd_quatf(vector: [.nan, .nan, .nan, .nan])), count: max(count, 0))
+            }
+        }
+        let view = SpatialLayoutView(NaNLayout(), primaries.prefix(1)) { item in swatch(item.color) }
+        let pixels = try Pixels(view, width: 60, height: 60)
+        // The NaN position becomes the origin, so the swatch is drawn in the middle.
+        #expect(pixels[30, 30].isClose(to: .red))
     }
 
     @Test("spatialHitTarget keeps the view's layout size")

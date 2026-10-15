@@ -110,7 +110,8 @@ struct SpatialPlacementEffect: ViewModifier {
 
     func body(content: Content) -> some View {
         let perMeter = physicalMetrics.convert(1, from: .meters)
-        let position = SpatialMath.finite(placement.position, or: .zero)
+        let placement = placement.sanitized
+        let position = placement.position
         let rotation = SpatialUnits.flippingY(placement.orientation).vector
         content
             .rotation3DEffect(Rotation3D(simd_quatd(vector: SIMD4<Double>(rotation))))
@@ -119,7 +120,7 @@ struct SpatialPlacementEffect: ViewModifier {
     }
     #else
     func body(content: Content) -> some View {
-        let projected = projection.project(placement)
+        let projected = projection.project(placement.sanitized)
         content
             .rotation3DEffect(.radians(projected.yaw), axis: (x: 0, y: 1, z: 0), perspective: 0.4)
             .scaleEffect(projected.scale)

@@ -76,6 +76,26 @@ struct RealityKitTests {
         #expect(transform.scale == [2, 2, 2])
     }
 
+    /// A custom layout with a bug: every placement is broken.
+    struct BrokenLayout: SpatialLayout {
+        func placements(count: Int) -> [SpatialPlacement] {
+            Array(repeating: SpatialPlacement(position: [.nan, .infinity, 1], orientation: simd_quatf(vector: [.infinity, 0, 0, 0])), count: SpatialLayoutLimits.clampedCount(count))
+        }
+    }
+
+    @Test("a broken custom layout cannot give an entity an infinite transform")
+    func brokenLayout() {
+        let parent = parent(withChildren: 2)
+        parent.arrangeChildren(using: BrokenLayout())
+        for child in parent.children {
+            #expect(child.position == [0, SpatialLayoutLimits.maximumLength, 1])
+            #expect(child.orientation == SpatialMath.identity)
+        }
+        let entity = Entity()
+        entity.apply(SpatialPlacement(position: [.nan, 0, 0], orientation: simd_quatf(vector: .zero)))
+        #expect(entity.position == .zero)
+    }
+
     @Test("an empty parent places nothing")
     func empty() {
         #expect(Entity().arrangeChildren(using: SphereLayout()) == 0)

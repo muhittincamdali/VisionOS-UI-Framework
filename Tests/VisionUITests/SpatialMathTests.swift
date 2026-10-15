@@ -81,4 +81,20 @@ struct SpatialMathTests {
         #expect(isClose(placement.forward, SIMD3<Float>(1, 0, 0)))
         #expect(isClose(placement.yaw, .pi / 2))
     }
+
+    @Test("sanitized placements are finite, limited and unit length")
+    func sanitizedPlacement() {
+        let broken = SpatialPlacement(
+            position: [.nan, .infinity, -.greatestFiniteMagnitude],
+            orientation: simd_quatf(vector: [.nan, 0, 0, 1])
+        ).sanitized
+        let limit = SpatialLayoutLimits.maximumLength
+        #expect(broken.position == [0, limit, -limit])
+        #expect(broken.orientation == SpatialMath.identity)
+        #expect(SpatialPlacement(position: .zero, orientation: simd_quatf(vector: .zero)).sanitized.orientation == SpatialMath.identity)
+        // A valid placement keeps its values; a scaled quaternion is normalized.
+        let scaled = SpatialPlacement(position: [1, 2, 3], orientation: simd_quatf(vector: [0, 0, 0, 2])).sanitized
+        #expect(scaled.position == [1, 2, 3])
+        #expect(scaled.orientation == SpatialMath.identity)
+    }
 }

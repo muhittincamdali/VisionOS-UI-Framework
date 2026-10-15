@@ -16,7 +16,11 @@ public extension Transform {
 @MainActor
 public extension Entity {
     /// Moves the entity to a placement, relative to its parent, and keeps its scale.
+    ///
+    /// The placement is ``SpatialPlacement/sanitized`` first, so a NaN or infinite value never
+    /// reaches the entity.
     func apply(_ placement: SpatialPlacement) {
+        let placement = placement.sanitized
         position = placement.position
         orientation = placement.orientation
     }
@@ -75,7 +79,7 @@ public extension Entity {
         let placements = layout.placements(count: entities.count)
         let animated = duration.isFinite && duration > 0
         for (entity, placement) in zip(entities, placements) {
-            let target = Transform(placement, scale: entity.scale(relativeTo: reference))
+            let target = Transform(placement.sanitized, scale: entity.scale(relativeTo: reference))
             if animated {
                 entity.move(to: target, relativeTo: reference, duration: duration, timingFunction: timingFunction)
             } else {
